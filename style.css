@@ -1,0 +1,50 @@
+/*==================================================
+
+
+
+/**
+* Table of Contents :
+* 1.0 - IMPORT CSS
+* 2.0 - Default CSS
+
+[Color codes]
+
+Background: #ffffff (white)
+Content:    #666666 (Gray)
+Header h1:  #191919 (dark black)
+Header h2:  #191919 (dark black)
+Footer:     #fff (White)
+
+a (standard):   #000 (dark black)
+a (visited):    #333 (blue)
+a (active): #33 (blue)
+
+[Typography]
+  
+Body copy:      14px/ 'Source Sans Pro', sans-serif;
+Headers:        'Roboto Slab', serif;
+Input, textarea:    'Roboto Slab', serif;
+Sidebar heading:    'Roboto Slab', serif;
+
+
+/*-------------------------------------------------------------------*/
+
+/*
+      ==============================================================
+           IMPORT CSS
+      ==============================================================
+*/
+    @import url('css/bootstrap.min.css');
+    @import url('css/owl.carousel.css');
+    @import url('css/font-awesome.css');
+    @import url('css/widget.css');
+    @import url('css/typography.css');
+    @import url('css/shortcodes.css');
+    @import url('css/prettyPhoto.css');
+    @import url('css/prettyPhoto.css');
+    @import url('css/svg-style.css');
+/*
+      ==============================================================
+           Default CSS
+      ==============================================================
+*/
