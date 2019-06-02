@@ -23,6 +23,7 @@ class DashboardController extends Controller
     */
     public function getDashboard()
     {
+        session(['username' => 'admin']);
         return view('dashboard.dashboard');
     }
 
