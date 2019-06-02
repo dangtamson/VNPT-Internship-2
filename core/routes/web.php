@@ -21,3 +21,7 @@ Route::get('/main', 'MainController@index');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/logout', 'MainController@logout');
+
+Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@getDashboard']);
+Route::get('/logout', ['as' => 'logout', 'uses' => 'MainController@logout']);
+Route::get('/login', ['as' => 'login', 'uses' => 'MainController@index']);
