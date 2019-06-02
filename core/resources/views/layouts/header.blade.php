@@ -14,9 +14,9 @@
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  Xin chào :&nbsp;
-            <?php
-                if(isset($_SESSION['username'])){echo $_SESSION['username'];}
-            ?>
+            @if(Session::has('username'))
+                {{ Session::get('username') }}
+            @endif
             <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
