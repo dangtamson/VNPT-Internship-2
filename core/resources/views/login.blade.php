@@ -1,97 +1,151 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
- <head>
-  <title>Login Page</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-  <!--Bootsrap 4 CDN-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/Ionicons/css/ionicons.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/dist/css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/dist/css/skins/_all-skins.min.css')}}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/morris.js/morris.css')}}">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/jvectormap/jquery-jvectormap.css')}}">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="{{asset('css/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
 
-  <!--Custom styles-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-  <link href="../../../css/login.css" rel="stylesheet">
-  
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
 
- </head>
- <body>
-  <br />
-  <div class="container box">
- 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/dangnhap') }}">
+                        {{ csrf_field() }}
 
-   @if(isset(Auth::user()->email))
-    <script>window.location="/main/successlogin";</script>
-   @endif
+                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">Username</label>
 
-   @if ($message = Session::get('error'))
-   <div class="alert alert-danger alert-block">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong>{{ $message }}</strong>
-   </div>
-   @endif
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
 
-   @if (count($errors) > 0)
-    <div class="alert alert-danger">
-     <ul>
-     @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-     @endforeach
-     </ul>
-    </div>
-   @endif
+                                @if ($errors->has('username'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
-   <div class="container">
-  <div class="d-flex justify-content-center h-100">
-    <div class="card">
-      <div class="card-header">
-        <h3>Sign In</h3>
-        <div class="d-flex justify-content-end social_icon">
-          <span><i class="fab fa-facebook-square"></i></span>
-          <span><i class="fab fa-google-plus-square"></i></span>
-          <span><i class="fab fa-twitter-square"></i></span>
-        </div>
-      </div>
-      <div class="card-body">
-        <form method="post" action="{{ url('/main/checklogin') }}">
-          {{ csrf_field() }}
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+
+                              
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <input type="email" name="email" class="form-control" placeholder="Enter your email">
-            
-          </div>
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="password" name="password" class="form-control" placeholder="Enter your password">
-          </div>
-          <div class="row align-items-center remember">
-            <input type="checkbox">Remember Me
-          </div>
-          <div class="form-group">
-            <input type="submit" name="login" value="Login" class="btn float-right login_btn">
-          </div>
-        </form>
-      </div>
-      <div class="card-footer">
-        <div class="d-flex justify-content-center links">
-          Don't have an account?<a href="#">Sign Up</a>
         </div>
-        <div class="d-flex justify-content-center">
-          <a href="#">Forgot your password?</a>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
-  </div>
- </body>
+
+
+
+
+
+
+</body>
+
+<!-- jQuery 3 -->
+<script src="{{asset('css/AdminLTE/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{asset('css/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{asset('css/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<!-- Morris.js charts -->
+<script src="{{asset('css/AdminLTE/bower_components/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('css/AdminLTE/bower_components/morris.js/morris.min.js')}}"></script>
+<!-- Sparkline -->
+<script src="{{asset('css/AdminLTE/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+<!-- jvectormap -->
+<script src="{{asset('css/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+<script src="{{asset('css/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{asset('css/AdminLTE/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
+<!-- daterangepicker -->
+<script src="{{asset('css/AdminLTE/bower_components/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('css/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<!-- datepicker -->
+<script src="{{asset('css/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{{asset('css/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+<!-- Slimscroll -->
+<script src="{{asset('css/AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{asset('css/AdminLTE/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('css/AdminLTE/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{asset('css/AdminLTE/dist/js/pages/dashboard.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('css/AdminLTE/dist/js/demo.js')}}"></script>
+</body>
 </html>

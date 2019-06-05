@@ -4,11 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel VNPT</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="shortcut icon" href="favicon.ico" />
 
         <!-- Styles -->
         <style>
@@ -82,11 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel VNPT 5.8
+                    Laravel
                 </div>
 
                 <div class="links">
-                    <a href="https://127.0.0.1/docs">Docs</a>
+                    <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>

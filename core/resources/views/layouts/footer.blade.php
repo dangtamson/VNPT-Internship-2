@@ -1,13 +1,20 @@
-<div id="footer">
-            <p>Bản quyền thuộc về vnpt@gmail.com</p>
-</div>
+   <div id="footer">
+            <p>Bản quyền thuộc về tungvu90@gmail.com</p>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+
     <!-- jQuery -->
-    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="../../../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
+    <script src="../../../js/plugins/morris/raphael.min.js"></script>
+    <script src="../../../js/plugins/morris/morris.min.js"></script>
+    <script src="../../../js/plugins/morris/morris-data.js"></script>
+
 </body>
 
 </html>

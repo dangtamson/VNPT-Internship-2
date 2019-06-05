@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
@@ -7,8 +6,7 @@ use Validator;
 use Auth;
 
 class MainController extends Controller
-{
-    
+{ 
     function index()
     {
      return view('login');
@@ -46,6 +44,15 @@ class MainController extends Controller
     {
      Auth::logout();
      return redirect('main');
+    }
+
+    function them()
+    {
+     return view('admin/user/them');
+    }
+     function danhsach()
+    {
+     return view('admin/user/danhsach');
     }
 }
 
