@@ -1,5 +1,5 @@
    <div id="footer">
-            <p>Bản quyền thuộc về tungvu90@gmail.com</p>
+           
         </div>
     </div>
     <!-- /#wrapper -->

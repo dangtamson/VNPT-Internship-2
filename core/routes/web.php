@@ -23,7 +23,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('them','UserController@postThem');
 		Route::get('sua/{id}','UserController@getSua');
 		Route::post('sua/{id}','UserController@postSua');
-		Route::post('search',['as'=>'us_getSearch','uses'=>'UserController@getSearch']);
+		Route::post('search',['as'=>'us_getSearch1','uses'=>'UserController@getSearch']);
 		Route::get('xoa/{id}','UserController@getXoa');
 		Route::get('useradmin','UserController@userAdmin');
 		Route::get('usernhanvien','UserController@userNhanVien');
@@ -37,7 +37,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('them','PhongbanController@postThem');
 		Route::get('sua/{id}','PhongbanController@getSua');
 		Route::post('sua/{id}','PhongbanController@postSua');
-		Route::post('search',['as'=>'us_getSearch','uses'=>'PhongbanController@getSearch']);
+		Route::post('search',['as'=>'us_getSearch5','uses'=>'PhongbanController@getSearch']);
 		Route::get('xoa/{id}','PhongbanController@getXoa');
 		
 	});
@@ -46,9 +46,24 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('danhsachcv','ChucvuController@getDanhSachcv');
 			Route::get('themcv','ChucvuController@getThemcv');
 			Route::post('themcv','ChucvuController@postThemcv');
-			Route::post('search',['as'=>'us_getSearch','uses'=>'ChucvuController@getSearch']);
+			Route::post('search',['as'=>'us_getSearch3','uses'=>'ChucvuController@getSearch']);
 			Route::get('xoacv/{id_cv}','ChucvuController@getXoacv');
 			Route::get('suacv/{id_cv}','ChucvuController@getSuacv');
 			Route::post('suacv/{id_cv}','ChucvuController@postSuacv');
 	});
+	Route::group(['prefix'=>'linhvuc'],function(){
+
+			Route::get('danhsachlv','LinhvucController@getDanhSachlv');
+			Route::get('themlv','LinhvucController@getThemlv');
+			Route::post('themlv','LinhvucController@postThemlv');
+			Route::post('search',['as'=>'us_getSearch4','uses'=>'LinhvucController@getSearch']);
+			Route::get('xoalv/{id_lv}','LinhvucController@getXoalv');
+			Route::get('sualv/{id_lv}','LinhvucController@getSualv');
+			Route::post('sualv/{id_lv}','LinhvucController@postSualv');
 });
+});
+Route::get('lienket',function(){
+	$data = App\User::find(9)->phongban->toArray();
+	var_dump($data);
+});
+

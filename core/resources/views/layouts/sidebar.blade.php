@@ -25,8 +25,8 @@
                         </ul>
                     </li> 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_s"><i class="fas fa-poll"></i> Quản lý phòng ban <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_s" class="collapse">
+                       <a href="javascript:;" data-toggle="collapse" data-target="#demo_pb"><i class="fas fa-users-cog"></i> Quản lý phòng ban <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_pb" class="collapse">
                             <li>
                                 <a href="/admin/phongban/them">Thêm mới</a>
                             </li>
@@ -35,6 +35,18 @@
                             </li>
                         </ul>
                     </li> 
+                        <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_lv"><i class="fas fa-users-cog"></i> Quản lý lĩnh vực <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_lv" class="collapse">
+                            <li>
+                                <a href="/admin/linhvuc/themlv"><i class="fas fa-user-plus"></i> Thêm lĩnh vực</a>
+                            </li>
+                            <li>
+                                <a href="/admin/linhvuc/danhsachlv"><i class="fas fa-address-book"></i> Danh sách lĩnh vực</a>
+                            </li>
+                                                        
+                        </ul>
+                    </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo_cv"><i class="fas fa-users-cog"></i> Quản lý chức vụ <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_cv" class="collapse">
@@ -73,7 +85,7 @@
                         </ul>
                     </li> 
                     	
-					
+				
                    			
                 </ul>
             </div>
