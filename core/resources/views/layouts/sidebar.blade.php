@@ -16,59 +16,60 @@
                                 <a href="/admin/user/danhsach"><i class="fas fa-address-book"></i> Danh sách tất cả</a>
                             </li>
                             <li>
-                                <a href="/admin/user/usernhanvien"><i class="fas fa-address-book"></i> Danh sách nhân viên</a>
+                                <a href="/admin/user/usernhanvien"><i class="far fa-address-book"></i> Danh sách nhân viên</a>
                             </li>
                             <li>
-                                <a href="/admin/user/useradmin"><i class="fas fa-address-book"></i> Danh sách Admin</a>
+                                <a href="/admin/user/useradmin"><i class="far fa-address-book"></i> Danh sách Admin</a>
                             </li>
                             
                         </ul>
                     </li> 
                     <li>
-                       <a href="javascript:;" data-toggle="collapse" data-target="#demo_pb"><i class="fas fa-users-cog"></i> Quản lý phòng ban <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_pb" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_s"><i class="fas fa-poll"></i> Quản lý phòng ban <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_s" class="collapse">
                             <li>
-                                <a href="/admin/phongban/them">Thêm mới</a>
+                                <a href="/admin/phongban/them"><i class="fas fa-plus"></i> Thêm mới</a>
                             </li>
                             <li>
-                                <a href="/admin/phongban/danhsach">Danh sách</a>
+                                <a href="/admin/phongban/danhsach"><i class="far fa-list-alt"></i> Danh sách</a>
                             </li>
                         </ul>
                     </li> 
-                        <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_lv"><i class="fas fa-users-cog"></i> Quản lý lĩnh vực <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_lv" class="collapse">
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cv"><i class="fas fa-address-card"></i> Quản lý chức vụ <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_cv" class="collapse">
                             <li>
-                                <a href="/admin/linhvuc/themlv"><i class="fas fa-user-plus"></i> Thêm lĩnh vực</a>
+                                <a href="/admin/chucvu/themcv"><i class="fas fa-plus-square"></i> Thêm chức vụ</a>
                             </li>
                             <li>
-                                <a href="/admin/linhvuc/danhsachlv"><i class="fas fa-address-book"></i> Danh sách lĩnh vực</a>
+                                <a href="/admin/chucvu/danhsachcv"><i class="fas fa-clipboard-list"></i> Danh sách chức vụ</a>
                             </li>
                                                         
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_cv"><i class="fas fa-users-cog"></i> Quản lý chức vụ <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_cv" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_lv"><i class="fas fa-briefcase"></i> Quản lý lĩnh vực <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_lv" class="collapse">
                             <li>
-                                <a href="/admin/chucvu/themcv"><i class="fas fa-user-plus"></i> Thêm chức vụ</a>
+                                <a href="/admin/linhvuc/themlv"><i class="fas fa-plus-circle"></i> Thêm lĩnh vực</a>
                             </li>
                             <li>
-                                <a href="/admin/chucvu/danhsachcv"><i class="fas fa-address-book"></i> Danh sách chức vụ</a>
+                                <a href="/admin/linhvuc/danhsachlv"><i class="fas fa-list"></i> Danh sách lĩnh vực</a>
                             </li>
                                                         
                         </ul>
                     </li>
 					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Quản lý khảo sát <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Quản lý tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_bv" class="collapse">
+                            <li>
+                                <a href="#">Thêm mới</a>
+                            </li>
                             
                              <li>
-                                <a href="#">Danh sách khảo sát</a>
+                                <a href="#">Danh sách tiêu chí</a>
                             </li>
-                            <li>
-                                <a href="#">Tiêu chí đánh giá</a>
-                            </li>
+                            
                             
                         </ul>
                     </li>
@@ -85,7 +86,7 @@
                         </ul>
                     </li> 
                     	
-				
+					
                    			
                 </ul>
             </div>

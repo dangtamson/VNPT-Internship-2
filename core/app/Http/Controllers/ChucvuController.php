@@ -33,7 +33,7 @@ class ChucvuController extends Controller
             'tencv' => 'bail|required|',   
         ],
         [
-            'tencv.required'=>'Bạn chưa nhập tên chức vụ !'         
+            'tencv.requied'=>'Bạn chưa nhập tên chức vụ !'         
        
         ]);
 

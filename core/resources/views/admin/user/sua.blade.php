@@ -40,7 +40,7 @@
 							<td><label class="control-label">Username: </label></td>
 							<td><input type="text" name="username" class="form-control" placeholder="Nhập tên tài khoản" value="{{$user->username}}" ></td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>
 								<label class="control-label">Password mới </label>
 							</td>
@@ -50,27 +50,39 @@
 						<tr>
 							<td><label class="control-label">Nhập lại Password: </label></td>
 							<td><input type="text" name="passwordAgain" class="form-control" placeholder="Nhập lại mật khẩu" value="{{$user->check_pass}}"></td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td><label class="control-label">Email: </label></td>
 							<td><input type="text" name="email" class="form-control" placeholder="Họ tên" value="{{$user->email}}"></td>
 						</tr>
 						<tr>
+                            <tr>
+							<td><label class="control-label">Giới tính: </label></td>
+							<td>
+								<select name="gioitinh" class="form-control" id="sel1">
+									<option value="0" 
+										@if($user->gioitinh == 0)
+											{{"selected"}}
+										@endif
+										>Nam
+									</option>
+									<option value="1"
+										@if($user->gioitinh == 1)
+											{{"selected"}}
+										@endif
+										>Nữ
+									</option>
+								</select>
+							</td>
+						</tr>
+                        </tr>
+						<tr>
 							<td><label class="control-label">Phòng ban: </label></td>
 							<td>
 								<select name="id_pb" class="form-control" id="sel1">
-									<option value="0" 
-										@if($user->id_pb == 0)
-											{{"selected"}}
-										@endif
-										>Khối chính quyền
-									</option>
-									<option value="1"
-										@if($user->id_pb == 1)
-											{{"selected"}}
-										@endif
-										>Khối doanh nghiệp
-									</option>
+									 @foreach ($phongban_array as $data)
+                                    <option value="{{ $data->id_pb }}">{{ $data->tenpb}}</option>
+                                    @endforeach
 								</select>
 							</td>
 						</tr>
@@ -78,18 +90,9 @@
 							<td><label class="control-label">Chức vụ: </label></td>
 							<td>
 								<select name="id_cv" class="form-control" id="sel1">
-									<option value="0" 
-										@if($user->id_cv == 0)
-											{{"selected"}}
-										@endif
-										>Quản lý
-									</option>
-									<option value="1"
-										@if($user->id_cv == 1)
-											{{"selected"}}
-										@endif
-										>Nhân Viên
-									</option>
+									@foreach ($chucvu_array as $data)
+                                    <option value="{{ $data->id_cv }}">{{ $data->tencv}}</option>
+                                    @endforeach
 								</select>
 							</td>
 						</tr>
@@ -115,7 +118,7 @@
 						
 						<tr style="background-color: white">
 							<td colspan="2" align="center">
-								<button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Thêm</button>
+								<button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Lưu</button>
 							</td>
 						</tr>
 					</table>
@@ -128,4 +131,4 @@
 
 
 
-@include('layouts.footer')
+  @include('layouts.footer')

@@ -27,6 +27,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('xoa/{id}','UserController@getXoa');
 		Route::get('useradmin','UserController@userAdmin');
 		Route::get('usernhanvien','UserController@userNhanVien');
+		Route::get('getpass/{id}','UserController@getpass');
 	
 	});
 
@@ -37,7 +38,7 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('them','PhongbanController@postThem');
 		Route::get('sua/{id}','PhongbanController@getSua');
 		Route::post('sua/{id}','PhongbanController@postSua');
-		Route::post('search',['as'=>'us_getSearch5','uses'=>'PhongbanController@getSearch']);
+		Route::post('search',['as'=>'us_getSearch2','uses'=>'PhongbanController@getSearch']);
 		Route::get('xoa/{id}','PhongbanController@getXoa');
 		
 	});
@@ -51,6 +52,7 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('suacv/{id_cv}','ChucvuController@getSuacv');
 			Route::post('suacv/{id_cv}','ChucvuController@postSuacv');
 	});
+
 	Route::group(['prefix'=>'linhvuc'],function(){
 
 			Route::get('danhsachlv','LinhvucController@getDanhSachlv');
@@ -60,10 +62,15 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('xoalv/{id_lv}','LinhvucController@getXoalv');
 			Route::get('sualv/{id_lv}','LinhvucController@getSualv');
 			Route::post('sualv/{id_lv}','LinhvucController@postSualv');
+	});
 });
-});
+
 Route::get('lienket',function(){
-	$data = App\User::find(9)->phongban->toArray();
+	$data = App\User::find(8)->phongban->toArray();
 	var_dump($data);
 });
 
+Route::get('lienketphongban',function(){
+	$data = App\Phongban::find(3)->user->toArray();
+	var_dump($data);
+});

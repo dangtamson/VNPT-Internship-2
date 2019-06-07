@@ -30,7 +30,8 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-            
+
+
             <form action="themcv" method="post" class="form-horizontal"> 
                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                 <div class="form-group">
@@ -51,4 +52,5 @@
         </div>
 </div>
 
-@include('layouts.footer')
+           
+    @include('layouts.footer')

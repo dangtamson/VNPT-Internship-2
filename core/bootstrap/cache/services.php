@@ -32,6 +32,8 @@
     28 => 'App\\Providers\\AuthServiceProvider',
     29 => 'App\\Providers\\EventServiceProvider',
     30 => 'App\\Providers\\RouteServiceProvider',
+    31 => 'App\\Providers\\PhongbanProvider',
+    32 => 'App\\Providers\\ChucvuProvider',
   ),
   'eager' => 
   array (
@@ -52,6 +54,8 @@
     14 => 'App\\Providers\\AuthServiceProvider',
     15 => 'App\\Providers\\EventServiceProvider',
     16 => 'App\\Providers\\RouteServiceProvider',
+    17 => 'App\\Providers\\PhongbanProvider',
+    18 => 'App\\Providers\\ChucvuProvider',
   ),
   'deferred' => 
   array (

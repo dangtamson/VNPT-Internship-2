@@ -1,5 +1,6 @@
 
 @include('layouts.header')
+
 <section class="content-header">
       <h1>
         Phòng ban
@@ -26,7 +27,7 @@
 
     <div style="padding-left: 3%"> 
     </div>
-        <form action="{{route('us_getSearch5')}}" method="POST" class="sidebar-form">
+        <form action="{{route('us_getSearch2')}}" method="POST" class="sidebar-form">
             <div class="input-group">
                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                 <input style="width: 226px;margin-left: 820px;" type="text" name="search" class="form-control" placeholder="Nhập username..." value="@if(isset($id_hocvien)){{$id_hocvien->ma_hv}}@elseif(isset($id_lop)){{$ma_lop}}@endif">
@@ -42,6 +43,7 @@
                     <tr align="center">
                         <th>ID</th>
                         <th>TÊN PHÒNG BAN</th>
+                        <th>NGÀY TẠO</th>
 
                     </tr>
                 </THEAD>
@@ -73,4 +75,4 @@
     </div>
      
           
-@include('layouts.footer')
+  @include('layouts.footer')

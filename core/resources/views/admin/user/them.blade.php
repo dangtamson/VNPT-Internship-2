@@ -57,22 +57,34 @@
                             <td><input type="text" name="email" class="form-control" placeholder="Nhập email"></td>
                         </tr>
                         <tr>
-                            <td><label class="control-label">Phòng ban: </label></td>
+                            <td><label class="control-label">Giới tính: </label></td>
                             <td>
-                                <select name="id_pb" class="form-control" id="sel1">
-                                    <option value="0">Khối chính quyền</option>
-                                    <option value="1">Khối doanh nghiệp</option>
+                                <select name="gioitinh" class="form-control" id="gioitinh">
+                                    <option value="0">Nam</option>
+                                    <option value="1">Nữ</option>
                                     
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                            <td><label class="control-label">Công việc: </label></td>
+                            <td><label class="control-label">Phòng ban: </label></td>
+                            <td>
+                                <select name="id_pb" class="form-control" id="sel1">
+
+                                    @foreach ($phongban_array as $data)
+                                    <option value="{{ $data->id_pb }}">{{ $data->tenpb}}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="control-label">Chức vụ: </label></td>
                             <td>
                                 <select name="id_cv" class="form-control" id="sel1">
-                                    <option value="0">Quản lý</option>
-                                    <option value="1">Nhân viên</option>
-                                    
+                                    @foreach ($chucvu_array as $data)
+                                    <option value="{{ $data->id_cv }}">{{ $data->tencv}}</option>
+                                    @endforeach
                                 </select>
                             </td>
                         </tr>
@@ -98,4 +110,5 @@
         </div>
 </div>
 
-@include('layouts.footer')
+           
+     @include('layouts.footer')

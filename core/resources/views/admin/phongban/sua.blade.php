@@ -1,3 +1,4 @@
+               
 @include('layouts.header')
 <section class="content-header">
       <h1>
@@ -47,4 +48,4 @@
             </form>
         </div>
 </div>
-@include('layouts.footer')
+   @include('layouts.footer')

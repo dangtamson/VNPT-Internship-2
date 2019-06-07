@@ -37,7 +37,7 @@
                     <table class="table table-hover table-striped">
                         <tr>
                             <td><label class="control-label">Tên phòng ban: </label></td>
-                            <td><input type="text" name="tenpb" class="form-control" placeholder="Họ tên"></td>
+                            <td><input type="text" name="tenpb" class="form-control" placeholder="Tên phòng ban"></td>
                         </tr>
                         <tr style="background-color: white">
                             <td colspan="2" align="center">
@@ -52,4 +52,4 @@
 </div>
 
            
-@include('layouts.footer')
+    @include('layouts.footer')

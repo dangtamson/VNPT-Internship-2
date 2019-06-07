@@ -42,11 +42,12 @@
 					<tr align="center">
 						<th>ID</th>
 						<th>HỌ TÊN</th>
+						<th>GIỚI TÍNH</th>
 						<th>USERNAME</th>
-						<th>PASSWORK</th>
+						<!-- <th>PASSWORD</th> -->
 						<th>EMAIL</th>
 						<th>PHÒNG BAN</th>
-						<th>CÔNG VIỆC</th>
+						<th>CHỨC VỤ</th>
 						<th>QUYỀN</th>
 						<th>NGÀY TẠO</th>
 
@@ -57,23 +58,30 @@
 						@if(isset($id_user))
 							<td>{{$id_user->id}}</td>
 							<td>{{$id_user->name}}</td>
+							<td>@if($id_user->gioitinh == 0)
+									{{'Nam'}}
+								@elseif($id_user->gioitinh == 1)
+									{{'Nữ'}}
+								@endif</td>
 							<td>{{$id_user->username}}</td>
-							<td>{{$id_user->check_pass}}</td>
+							<!-- <td>{{$id_user->check_pass}}</td> -->
 							<td>{{$id_user->email}}</td>
 							<td>
-								@if($id_user->id_pb == 0)
-									{{'Khối chính quyền'}}
-								@elseif($id_user->id_pb == 1)
-									{{'Khối doanh nghiệp'}}
-								@endif
-							</td>
-							<td>
-								@if($id_user->id_cv == 0)
-									{{'Quản lý'}}
-								@elseif($id_user->id_cv == 1)
-									{{'Nhân Viên'}}
-								@endif
-							</td>
+										@foreach($phongban as $pb)
+											@if($id_user->id_pb == $pb->id_pb)
+												{{$pb->tenpb}}
+											@endif
+										@endforeach
+
+									</td>
+									<td>
+										@foreach($chucvu as $cv)
+											@if($id_user->id_cv == $cv->id_cv)
+												{{$cv->tencv}}
+											@endif
+										@endforeach
+
+									</td>
 							<td>
 								@if($id_user->quyen == 0)
 									{{'Admin'}}
@@ -84,28 +92,38 @@
 							<td>{{$id_user->created_at}}</td>
 							<td><i><a href="sua/{{$id_user->id}}">edit</a></i></td>
 							<td><i><a href="xoa/{{$id_user->id}}">delete</a></i></td>
+							<td><i><a href="getpass/{{$id_user->id}}">View Password</a></i></td>
+
+
 					</tr>
 						@else
 							@foreach($user as $u)
 								<tr align="left">
 									<td>{{$u->id}}</td>
 									<td>{{$u->name}}</td>
+									<td>@if($u->gioitinh == 0)
+									{{'Nam'}}
+								@elseif($u->gioitinh == 1)
+									{{'Nữ'}}
+								@endif</td>
 									<td>{{$u->username}}</td>
-									<td>{{$u->check_pass}}</td>
+									<!-- <td>{{$u->check_pass}}</td> -->
 									<td>{{$u->email}}</td>
 									<td>
-										@if($u->id_pb == 0)
-											{{'Khối chính quyền'}}
-										@elseif($u->id_pb == 1)
-											{{'Khối doanh nghiệp'}}
-										@endif
+										@foreach($phongban as $pb)
+											@if($u->id_pb == $pb->id_pb)
+												{{$pb->tenpb}}
+											@endif
+										@endforeach
+
 									</td>
 									<td>
-										@if($u->id_cv == 0)
-											{{'Quản lý'}}
-										@elseif($u->id_cv == 1)
-											{{'Nhân viên'}}
-										@endif
+										@foreach($chucvu as $cv)
+											@if($u->id_cv == $cv->id_cv)
+												{{$cv->tencv}}
+											@endif
+										@endforeach
+
 									</td>
 									<td>
 										@if($u->quyen == 0)
@@ -118,6 +136,7 @@
 									<td>{{$u->created_at}}</td>
 									<td><i><a href="sua/{{$u->id}}">edit</a></i></td>
 									<td><i><a href="xoa/{{$u->id}}">delete</a></i></td>
+									<td><i><a href="getpass/{{$u->id}}">View Password</a></i></td>
 								</tr>
 							@endforeach
 						@endif
@@ -127,4 +146,5 @@
 
 	</div>
      
-@include('layouts.footer')
+          
+    @include('layouts.footer')

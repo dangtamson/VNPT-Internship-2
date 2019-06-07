@@ -56,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="successlogin" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
+                <a class="navbar-brand" href="/main/successlogin" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -78,7 +78,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="main/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="/main/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

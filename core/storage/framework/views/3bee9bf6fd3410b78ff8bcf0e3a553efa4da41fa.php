@@ -1,4 +1,4 @@
-<?php include('core/resources/views/header.php')?>
+<?php include('core/resources/views/layouts/header.blade.php')?>
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
@@ -16,5 +16,5 @@
             <!-- /.container-fluid --
         </div>
         <!-- /#page-wrapper -->
-<?php include('core/resources/views/footer.php')?> 
+<?php include('core/resources/views/layouts/footer.blade.php')?> 
 <?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/successlogin.blade.php ENDPATH**/ ?>
