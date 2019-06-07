@@ -41,6 +41,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Phongban','id_pb','id_pb');
     }
-
+    protected $table = 'users';
     
 }

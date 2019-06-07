@@ -23,7 +23,7 @@ class UserController extends Controller
         }
     }
     public function getDanhSach(){
-        $user = User::all();
+        $user = User::Paginate(7);
         $chucvu = Chucvu::all();
         $phongban = Phongban::all();
         return view('admin.user.danhsach',['user'=>$user, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);

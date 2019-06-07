@@ -143,7 +143,7 @@
 				</tbody>
 				
 			</table>
-
+{!! $user->links()!!}
 	</div>
      
           
