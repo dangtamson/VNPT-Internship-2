@@ -1,12 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
-use App\User;
+
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
 
 class MainController extends Controller
-{ 
+{
     function index()
     {
      return view('login');
@@ -15,19 +16,18 @@ class MainController extends Controller
     function checklogin(Request $request)
     {
      $this->validate($request, [
-      'email'   => 'required|email',
+      'username'   => 'required',
       'password'  => 'required|alphaNum|min:3'
      ]);
 
      $user_data = array(
-      'email'  => $request->get('email'),
+      'username'  => $request->get('username'),
       'password' => $request->get('password')
      );
 
      if(Auth::attempt($user_data))
      {
-        
-      return redirect('/main/successlogin');
+      return redirect('main/successlogin');
      }
      else
      {
@@ -44,16 +44,7 @@ class MainController extends Controller
     function logout()
     {
      Auth::logout();
-     return redirect('/main');
-    }
-
-    function them()
-    {
-     return view('/admin/user/them');
-    }
-     function danhsach()
-    {
-     return view('/admin/user/danhsach');
+     return redirect('main');
     }
 }
 

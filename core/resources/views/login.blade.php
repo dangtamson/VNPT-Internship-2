@@ -17,8 +17,6 @@
 
   <!--Custom styles-->
  <style>
-   /* Made with love by Mutiullah Samim*/
-
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
@@ -121,27 +119,40 @@ margin-left: 4px;
         </div>
       </div>
       <div class="card-body">
-        <form>
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="text" class="form-control" placeholder="username">
-            
-          </div>
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
-            </div>
-            <input type="password" class="form-control" placeholder="password">
-          </div>
-          <div class="row align-items-center remember">
-            <input type="checkbox">Remember Me
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Login" class="btn float-right login_btn">
-          </div>
-        </form>
+        @if(isset(Auth::user()->username))
+    <script>window.location="/main/successlogin";</script>
+   @endif
+
+   @if ($message = Session::get('error'))
+   <div class="alert alert-danger alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ $message }}</strong>
+   </div>
+   @endif
+
+   @if (count($errors) > 0)
+    <div class="alert alert-danger">
+     <ul>
+     @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+     @endforeach
+     </ul>
+    </div>
+   @endif
+         <form method="post" action="{{ url('/main/checklogin') }}">
+    {{ csrf_field() }}
+    <div class="form-group">
+     <label style="color: #f8f9fa">Enter Email</label>
+     <input type="text" name="username" class="form-control" />
+    </div>
+    <div class="form-group">
+     <label style="color: #f8f9fa">Enter Password</label>
+     <input type="password" name="password" class="form-control" />
+    </div>
+    <div class="form-group">
+     <input type="submit" name="login" class="btn btn-primary" value="Login" />
+    </div>
+   </form>
       </div>
       <div class="card-footer">
         <div class="d-flex justify-content-center links">

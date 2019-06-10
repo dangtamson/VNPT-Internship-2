@@ -1,6 +1,6 @@
 <?php
-// Route::get('/uploadfile', 'UploadfileController@index');
-// Route::post('/uploadfile', 'UploadfileController@upload');
+ Route::get('/uploadfile', 'UploadfileController@index');
+ Route::post('/uploadfile', 'UploadfileController@upload');
  Route::get('/main', 'MainController@index');
  Route::post('/main/checklogin', 'MainController@checklogin');
  Route::get('main/successlogin', 'MainController@successlogin');
@@ -12,7 +12,7 @@
 // Route::get('/themnv', 'MainController@themnv')->name('themnv');
 
 Route::get('/', function(){
-	return view('successlogin');
+	return view('login');
 });
 
 Route::group(['prefix'=>'admin'],function(){
