@@ -23,7 +23,7 @@ class UserController extends Controller
         }
     }
     public function getDanhSach(){
-        $user = User::Paginate(7);
+        $user = User::Paginate(5);
         $chucvu = Chucvu::all();
         $phongban = Phongban::all();
         return view('admin.user.danhsach',['user'=>$user, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);
@@ -143,25 +143,21 @@ class UserController extends Controller
     }
 
      public function userAdmin(){
-        $ds_user = User::all()->where('quyen',0);
+        $ds_user = User::where('quyen',0)->Paginate(3);
         $chucvu = Chucvu::all();
         $phongban = Phongban::all();
         return view('admin.user.useradmin',['ds_user'=>$ds_user, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);
         
     }
     public function userNhanVien(){
-        $ds_user1 = User::all()->where('quyen',1);
+        $ds_user1 =User::where('quyen',1)->Paginate(3);
         $chucvu = Chucvu::all();
         $phongban = Phongban::all();
         return view('admin.user.usernhanvien',['ds_user1'=>$ds_user1, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);
        
     }
 
-   public function getpassword($id){
-        $user = User::find($id);
-
-       return redirect('admin/user/danhsach')->with('thongbao','abc') ;
-   }
+   
 
 
 

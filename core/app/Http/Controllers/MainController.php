@@ -27,7 +27,7 @@ class MainController extends Controller
      if(Auth::attempt($user_data))
      {
         
-      return redirect('main/successlogin');
+      return redirect('/main/successlogin');
      }
      else
      {
@@ -44,16 +44,16 @@ class MainController extends Controller
     function logout()
     {
      Auth::logout();
-     return redirect('main');
+     return redirect('/main');
     }
 
     function them()
     {
-     return view('admin/user/them');
+     return view('/admin/user/them');
     }
      function danhsach()
     {
-     return view('admin/user/danhsach');
+     return view('/admin/user/danhsach');
     }
 }
 

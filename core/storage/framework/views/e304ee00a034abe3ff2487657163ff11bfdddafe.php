@@ -124,6 +124,7 @@
 						<tr style="background-color: white">
 							<td colspan="2" align="center">
 								<button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Lưu</button>
+								<a href="/admin/user/danhsach" name="btn_back" class="btn btn-info" style="width: 8em">Back</a>
 							</td>
 						</tr>
 					</table>

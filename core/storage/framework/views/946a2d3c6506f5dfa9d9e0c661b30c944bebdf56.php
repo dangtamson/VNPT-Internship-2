@@ -39,9 +39,13 @@
 	        </div>
       	</form>
 	
-			<table class="table table-hover table-striped">
-				<THEAD>
-					<tr align="center">
+			
+				<tbody>
+
+					<?php if(isset($id_user)): ?>
+						<table class="table table-hover table-striped">
+						<THEAD>
+						<tr align="center">
 						<th>ID</th>
 						<th>HỌ TÊN</th>
 						<th>GIỚI TÍNH</th>
@@ -53,11 +57,8 @@
 						<th>QUYỀN</th>
 						<th>NGÀY TẠO</th>
 
-					</tr>
-				</THEAD>
-				<tbody>
-					<tr align="left">
-						<?php if(isset($id_user)): ?>
+						</tr>
+						</THEAD>
 							<td><?php echo e($id_user->id); ?></td>
 							<td><?php echo e($id_user->name); ?></td>
 							<td><?php if($id_user->gioitinh == 0): ?>
@@ -100,10 +101,27 @@
 							<td><?php echo e($id_user->created_at); ?></td>
 							<td><i><a href="sua/<?php echo e($id_user->id); ?>">edit</a></i></td>
 							<td><i><a href="xoa/<?php echo e($id_user->id); ?>">delete</a></i></td>
-							<td><i><a href="getpass/<?php echo e($u->id); ?>">View Password</a></i></td>
+							<td><i><a href="getpass/<?php echo e($id_user->id); ?>">View Password</a></i></td>
 
-					</tr>
-						<?php else: ?>
+							</table>
+					<?php else: ?>
+
+							<table class="table table-hover table-striped">
+							<THEAD>
+							<tr align="center">
+								<th>ID</th>
+								<th>HỌ TÊN</th>
+								<th>GIỚI TÍNH</th>
+								<th>USERNAME</th>
+								<!-- <th>PASSWORD</th> -->
+								<th>EMAIL</th>
+								<th>PHÒNG BAN</th>
+								<th>CHỨC VỤ</th>
+								<th>QUYỀN</th>
+								<th>NGÀY TẠO</th>
+
+							</tr>
+							</THEAD>
 							<?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<tr align="left">
 									<td><?php echo e($u->id); ?></td>
@@ -150,12 +168,15 @@
 									<td><i><a href="sua/<?php echo e($u->id); ?>">edit</a></i></td>
 									<td><i><a href="xoa/<?php echo e($u->id); ?>">delete</a></i></td>
 									<td><i><a href="getpass/<?php echo e($u->id); ?>">View Password</a></i></td>
-								</tr>
-							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+									</tr>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+								</table>
+									<center><?php echo $user->links(); ?></center>
 						<?php endif; ?>
+						
 				</tbody>
 				
-			</table>
+			
 
 	</div>
      

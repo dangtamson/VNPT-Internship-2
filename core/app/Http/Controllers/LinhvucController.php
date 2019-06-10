@@ -20,7 +20,7 @@ class LinhvucController extends Controller
         }
     }
     public function getDanhSachlv(){
-        $linhvuc = Linhvuc::all();
+        $linhvuc = Linhvuc::Paginate(5);
         return view('admin.linhvuc.danhsach',['linhvuc'=>$linhvuc]);
     }
 

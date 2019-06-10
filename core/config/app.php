@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\PhongbanProvider::class,
         App\Providers\ChucvuProvider::class,
+         App\Providers\LinhvucProvider::class,
 
 
     ],

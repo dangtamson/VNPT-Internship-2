@@ -29,7 +29,7 @@
 			<?php endif; ?>
 
 
-  			<form action="/admin/user/danhsach" method="get" class="form-horizontal"> 
+  			<form action="/admin/user/danhsach" class="form-horizontal"> 
 				<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
 				<div class="form-group">
 					<table class="table table-hover table-striped">

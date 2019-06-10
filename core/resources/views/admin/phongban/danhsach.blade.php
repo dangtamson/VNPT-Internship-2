@@ -38,26 +38,36 @@
             </div>
         </form>
     
-            <table class="table table-hover table-striped">
-                <THEAD>
-                    <tr align="center">
-                        <th>ID</th>
-                        <th>TÊN PHÒNG BAN</th>
-                        <th>NGÀY TẠO</th>
-
-                    </tr>
-                </THEAD>
+            
                 <tbody>
-                    <tr align="left">
+                    
                         @if(isset($id_pb))
+                        <table class="table table-hover table-striped">
+                            <THEAD>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>TÊN PHÒNG BAN</th>
+                                    <th>NGÀY TẠO</th>
+
+                                </tr>
+                            </THEAD>
                             <td>{{$id_pb->id_pb}}</td>
                             <td>{{$id_pb->tenpb}}</td>
                             
                             <td>{{$id_pb->created_at}}</td>
                             <td><i><a href="sua/{{$id_pb->id_pb}}">edit</a></i></td>
                             <td><i><a href="xoa/{{$id_pb->id_pb}}">delete</a></i></td>
-                    </tr>
+                    </table>
                         @else
+                        <table class="table table-hover table-striped">
+                            <THEAD>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>TÊN PHÒNG BAN</th>
+                                    <th>NGÀY TẠO</th>
+
+                                </tr>
+                            </THEAD>
                             @foreach($phongban as $u)
                                 <tr align="left">
                                     <td>{{$u->id_pb}}</td>
@@ -67,10 +77,12 @@
                                     <td><i><a href="xoa/{{$u->id_pb}}">delete</a></i></td>
                                 </tr>
                             @endforeach
+                            </table>
+                            <center>{!! $phongban->links()!!}</center>
                         @endif
                 </tbody>
                 
-            </table>
+            
 
     </div>
      

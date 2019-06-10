@@ -9,4 +9,11 @@ class Linhvuc extends Model
         'tenlv',
     ];
  public $timestamps = false;
+
+
+
+ public function tieuchidanhgia()
+{
+	return $this->hasMany('App\tieuchidanhgia','id_lv','id_lv');
+}
    }

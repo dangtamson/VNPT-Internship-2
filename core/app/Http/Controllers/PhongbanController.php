@@ -19,7 +19,7 @@ class PhongbanController extends Controller
         }
     }
     public function getDanhSach(){
-        $phongban = Phongban::all();
+        $phongban = Phongban::Paginate(5);
         return view('admin.phongban.danhsach',['phongban'=>$phongban]);
     }
 
@@ -45,7 +45,7 @@ class PhongbanController extends Controller
         if(isset($taikhoan) != '')
         {  
 
-            return redirect('admin/phongban/them')->with('thongbao2','tenpb '.$taikhoan.' đã tồn tại !');
+            return redirect('admin/phongban/them')->with('thongbao2',''.$taikhoan.' đã tồn tại !');
             
 
         }

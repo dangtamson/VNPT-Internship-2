@@ -34,6 +34,7 @@
     30 => 'App\\Providers\\RouteServiceProvider',
     31 => 'App\\Providers\\PhongbanProvider',
     32 => 'App\\Providers\\ChucvuProvider',
+    33 => 'App\\Providers\\LinhvucProvider',
   ),
   'eager' => 
   array (
@@ -56,6 +57,7 @@
     16 => 'App\\Providers\\RouteServiceProvider',
     17 => 'App\\Providers\\PhongbanProvider',
     18 => 'App\\Providers\\ChucvuProvider',
+    19 => 'App\\Providers\\LinhvucProvider',
   ),
   'deferred' => 
   array (

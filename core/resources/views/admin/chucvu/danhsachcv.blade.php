@@ -37,26 +37,34 @@
 	        </div>
       	</form>
 	
-			<table class="table table-hover table-striped">
-				<THEAD>
-					<tr align="center">
-						<th>ID</th>
-						<th>TÊN CHỨC VỤ</th>
-						<th>NGÀY TẠO</th>
-					</tr>
-				</THEAD>
+			
 				<tbody>
-					<tr align="left">
-
+					
 						@if(isset($id_chucvu))	
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>TÊN CHỨC VỤ</th>
+									<th>NGÀY TẠO</th>
+								</tr>
+							</THEAD>
 							<td>{{$id_chucvu->id_cv}}</td>										
 							<td>{{$id_chucvu->tencv}}</td>
 							<td>{{$id_chucvu->created_at}}</td>
 							<td><i><a href="suacv/{{$id_chucvu->id_cv}}">edit</a></i></td>
 							<td><i><a href="xoacv/{{$id_chucvu->id_cv}}">delete</a></i></td>
 
-					</tr>
+					</table>
 						@else
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>TÊN CHỨC VỤ</th>
+									<th>NGÀY TẠO</th>
+								</tr>
+							</THEAD>
 							@foreach($chucvu as $u)
 								<tr align="left">
 									<td>{{$u->id_cv}}</td>
@@ -67,10 +75,12 @@
 
 								</tr>
 							@endforeach
+							</table>
+							<center>{!! $chucvu->links()!!}</center>
 						@endif
 				</tbody>
 				
-			</table>
+			
 
 	</div>
      

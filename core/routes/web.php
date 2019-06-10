@@ -63,6 +63,17 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sualv/{id_lv}','LinhvucController@getSualv');
 			Route::post('sualv/{id_lv}','LinhvucController@postSualv');
 	});
+
+	Route::group(['prefix'=>'tieuchidanhgia'],function(){
+
+			Route::get('danhsach','TieuchidanhgiaController@getDanhSach');
+			Route::get('them','TieuchidanhgiaController@getThem');
+			Route::post('them','TieuchidanhgiaController@postThem');
+			Route::post('search',['as'=>'us_getSearch5','uses'=>'LinhvucController@getSearch']);
+			Route::get('xoa/{id_ch}','TieuchidanhgiaController@getXoa');
+			Route::get('sua/{id_ch}','TieuchidanhgiaController@getSua');
+			Route::post('sua/{id_ch}','TieuchidanhgiaController@postSua');
+	});
 });
 
 Route::get('lienket',function(){

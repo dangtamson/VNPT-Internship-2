@@ -39,26 +39,34 @@
 	        </div>
       	</form>
 	
-			<table class="table table-hover table-striped">
-				<THEAD>
-					<tr align="center">
-						<th>ID</th>
-						<th>TÊN CHỨC VỤ</th>
-						<th>NGÀY TẠO</th>
-					</tr>
-				</THEAD>
+			
 				<tbody>
-					<tr align="left">
-
+					
 						<?php if(isset($id_chucvu)): ?>	
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>TÊN CHỨC VỤ</th>
+									<th>NGÀY TẠO</th>
+								</tr>
+							</THEAD>
 							<td><?php echo e($id_chucvu->id_cv); ?></td>										
 							<td><?php echo e($id_chucvu->tencv); ?></td>
 							<td><?php echo e($id_chucvu->created_at); ?></td>
 							<td><i><a href="suacv/<?php echo e($id_chucvu->id_cv); ?>">edit</a></i></td>
 							<td><i><a href="xoacv/<?php echo e($id_chucvu->id_cv); ?>">delete</a></i></td>
 
-					</tr>
+					</table>
 						<?php else: ?>
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>TÊN CHỨC VỤ</th>
+									<th>NGÀY TẠO</th>
+								</tr>
+							</THEAD>
 							<?php $__currentLoopData = $chucvu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<tr align="left">
 									<td><?php echo e($u->id_cv); ?></td>
@@ -69,10 +77,12 @@
 
 								</tr>
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+							</table>
+							<center><?php echo $chucvu->links(); ?></center>
 						<?php endif; ?>
 				</tbody>
 				
-			</table>
+			
 
 	</div>
      

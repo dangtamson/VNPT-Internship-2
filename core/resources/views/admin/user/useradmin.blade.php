@@ -37,25 +37,27 @@
 	        </div>
       	</form>
 	
-			<table class="table table-hover table-striped">
-				<THEAD>
-					<tr align="center">
-						<th>ID</th>
-						<th>HỌ TÊN</th>
-						<th>GIỚI TÍNH</th>
-						<th>USERNAME</th>
-						<!-- <th>PASSWORD</th> -->
-						<th>EMAIL</th>
-						<th>PHÒNG BAN</th>
-						<th>CHỨC VỤ</th>
-						<th>QUYỀN</th>
-						<th>NGÀY TẠO</th>
-
-					</tr>
-				</THEAD>
+			
 				<tbody>
-					<tr align="left">
+					
 						@if(isset($id_user))
+
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>HỌ TÊN</th>
+									<th>GIỚI TÍNH</th>
+									<th>USERNAME</th>
+									<!-- <th>PASSWORD</th> -->
+									<th>EMAIL</th>
+									<th>PHÒNG BAN</th>
+									<th>CHỨC VỤ</th>
+									<th>QUYỀN</th>
+									<th>NGÀY TẠO</th>
+
+								</tr>
+							</THEAD>
 							<td>{{$id_user->id}}</td>
 							<td>{{$id_user->name}}</td>
 							<td>@if($id_user->gioitinh == 0)
@@ -93,8 +95,25 @@
 							<td><i><a href="sua/{{$id_user->id}}">edit</a></i></td>
 							<td><i><a href="xoa/{{$id_user->id}}">delete</a></i></td>
 							<td><i><a href="getpass/{{$id_user->id}}">View Password</a></i></td>
-					</tr>
+							</table>
 						@else
+
+						<table class="table table-hover table-striped">
+							<THEAD>
+								<tr align="center">
+									<th>ID</th>
+									<th>HỌ TÊN</th>
+									<th>GIỚI TÍNH</th>
+									<th>USERNAME</th>
+									<!-- <th>PASSWORD</th> -->
+									<th>EMAIL</th>
+									<th>PHÒNG BAN</th>
+									<th>CHỨC VỤ</th>
+									<th>QUYỀN</th>
+									<th>NGÀY TẠO</th>
+
+								</tr>
+							</THEAD>
 							@foreach($ds_user as $u)
 								<tr align="left">
 									<td>{{$u->id}}</td>
@@ -137,10 +156,12 @@
 									<td><i><a href="getpass/{{$u->id}}">View Password</a></i></td>
 								</tr>
 							@endforeach
+							</table>
+							<center>{!! $ds_user->links()!!}</center>
 						@endif
 				</tbody>
 				
-			</table>
+			
 
 	</div>
      

@@ -19,7 +19,7 @@ class ChucvuController extends Controller
         }
     }
     public function getDanhSachcv(){
-        $chucvu = Chucvu::all();
+        $chucvu = Chucvu::Paginate(5);
         return view('admin.chucvu.danhsachcv',['chucvu'=>$chucvu]);
     }
 

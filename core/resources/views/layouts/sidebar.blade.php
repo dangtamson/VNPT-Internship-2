@@ -63,11 +63,11 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Quản lý tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_bv" class="collapse">
                             <li>
-                                <a href="#">Thêm mới</a>
+                                <a href="/admin/tieuchidanhgia/them">Thêm mới</a>
                             </li>
                             
                              <li>
-                                <a href="#">Danh sách tiêu chí</a>
+                                <a href="/admin/tieuchidanhgia/danhsach">Danh sách tiêu chí</a>
                             </li>
                             
                             
