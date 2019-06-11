@@ -10,7 +10,7 @@ class TieuchidanhgiaController extends Controller
 {
     //
     public function getSearch(Request $request){
-        $tim_khoachinh = DB::table('tieuchidanhgia')->where('noidungch',$request->search)->value('id_ch');
+        $tim_khoachinh = DB::table('tieuchidanhgia')->where('id_ch',$request->search)->value('id_ch');
         $id_user = Tieuchidanhgia::find($tim_khoachinh);
         $linhvuc = Linhvuc::all();
        
@@ -22,9 +22,15 @@ class TieuchidanhgiaController extends Controller
         }
     }
     public function getDanhSach(){
-        $tieuchidanhgia = Tieuchidanhgia::Paginate(5);
+        $tieuchidanhgia = Tieuchidanhgia::where('trangthai',1)->Paginate(5);
         $linhvuc = Linhvuc::all();
         return view('admin.tieuchidanhgia.danhsach',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc]);
+    }
+
+    public function getDanhSachan(){
+        $tieuchidanhgia = Tieuchidanhgia::where('trangthai',0)->Paginate(5);
+        $linhvuc = Linhvuc::all();
+        return view('admin.tieuchidanhgia.danhsachan',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc]);
     }
 
     public function getThem(){

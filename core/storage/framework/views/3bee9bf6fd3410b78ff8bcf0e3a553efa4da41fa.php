@@ -1,4 +1,4 @@
-<?php include('core/resources/views/layouts/header.blade.php')?>
+<?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
@@ -16,5 +16,5 @@
             <!-- /.container-fluid --
         </div>
         <!-- /#page-wrapper -->
-<?php include('core/resources/views/layouts/footer.blade.php')?> 
+<?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 <?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/successlogin.blade.php ENDPATH**/ ?>

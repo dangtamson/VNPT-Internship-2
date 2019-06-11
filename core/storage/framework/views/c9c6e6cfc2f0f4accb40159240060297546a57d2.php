@@ -60,13 +60,9 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                
-                
+                                
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  Xin chào:&nbsp;
-					  <?php
-       					 if(isset($_SESSION['username'])){echo $_SESSION['username'];}			  
-	   				  ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
                         
                          <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -85,7 +81,8 @@
             </ul>
             
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <?php include('core/resources/views/layouts/sidebar.blade.php') ?>
+
+        <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- /.navbar-collapse -->
         </nav>
   <div id="page-wrapper">

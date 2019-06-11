@@ -59,15 +59,19 @@
                                                         
                         </ul>
                     </li>
-					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Quản lý tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
+					 </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_bv" class="collapse">
                             <li>
-                                <a href="/admin/tieuchidanhgia/them">Thêm mới</a>
+                                <a href="/admin/tieuchidanhgia/them"><i class="fas fa-plus"></i> Thêm mới</a>
                             </li>
                             
                              <li>
-                                <a href="/admin/tieuchidanhgia/danhsach">Danh sách tiêu chí</a>
+                                <a href="/admin/tieuchidanhgia/danhsach"><i class="fas fa-list"></i> Danh sách tiêu chí</a>
+                            </li>
+                            <li>
+                                <a href="/admin/tieuchidanhgia/danhsachan"><i class="far fa-list-alt"></i> Tiêu chí đã ẩn</a>
                             </li>
                             
                             

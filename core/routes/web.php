@@ -1,20 +1,19 @@
 <?php
- Route::get('/uploadfile', 'UploadfileController@index');
- Route::post('/uploadfile', 'UploadfileController@upload');
+// Route::get('/uploadfile', 'UploadfileController@index');
+// Route::post('/uploadfile', 'UploadfileController@upload');
  Route::get('/main', 'MainController@index');
  Route::post('/main/checklogin', 'MainController@checklogin');
  Route::get('main/successlogin', 'MainController@successlogin');
+ Route::get('main/successlogin1', 'MainController@successlogin1');
  Route::get('main/logout', 'MainController@logout');
  Auth::routes(['verify' => true]); 
 
-// Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/dsnv', 'MainController@dsnv')->name('dsnv');
-// Route::get('/themnv', 'MainController@themnv')->name('themnv');
+
 
 Route::get('/', function(){
 	return view('login');
 });
-
+Auth::routes();
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'user'],function(){
 
@@ -63,16 +62,16 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sualv/{id_lv}','LinhvucController@getSualv');
 			Route::post('sualv/{id_lv}','LinhvucController@postSualv');
 	});
-
 	Route::group(['prefix'=>'tieuchidanhgia'],function(){
 
 			Route::get('danhsach','TieuchidanhgiaController@getDanhSach');
 			Route::get('them','TieuchidanhgiaController@getThem');
 			Route::post('them','TieuchidanhgiaController@postThem');
-			Route::post('search',['as'=>'us_getSearch5','uses'=>'LinhvucController@getSearch']);
+			Route::post('search',['as'=>'us_getSearch5','uses'=>'TieuchidanhgiaController@getSearch']);
 			Route::get('xoa/{id_ch}','TieuchidanhgiaController@getXoa');
 			Route::get('sua/{id_ch}','TieuchidanhgiaController@getSua');
 			Route::post('sua/{id_ch}','TieuchidanhgiaController@postSua');
+			Route::get('danhsachan','TieuchidanhgiaController@getDanhSachan');
 	});
 });
 
