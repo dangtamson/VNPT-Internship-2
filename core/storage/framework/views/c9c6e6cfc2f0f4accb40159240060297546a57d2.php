@@ -1,10 +1,11 @@
-<?php 
+<!-- <?php 
 	session_start();
 	  if (!isset($_SESSION['username']))
 	  {
          header('Location: login.php'); 
        }
-?>
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +39,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+     
+     
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
 
 </head>
 
@@ -56,32 +63,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/main/successlogin" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
+                <a class="navbar-brand" href="/main/successlogin1" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                                
+                
+                <?php if(isset(Auth::user()->username)): ?>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
-                        
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  Xin chào:&nbsp; <?php echo e(Auth::user()->name); ?>             
                          <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>                        
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i>Đổi mật khẩu</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/main/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
+                    
+                            <ul class="dropdown-menu">
+                              <!-- User image -->
+                              <li class="user-header" style="background-color: #3c8dbc; background:hover">
+                                <div>
+                                    <img src="<?php echo e(asset('css/avatar.png')); ?>" class="img-circle" alt="User Image" style="height: 75px;margin-left: 56px;">
+                                </div>
+                                <div align="center">
+                                <p style="color: rgba(255,255,255,0.8);">
+                                  <?php echo e(Auth::user()->name); ?> <br> <?php echo e(Auth::user()->username); ?><br>
+                                  <small>Member since <?php echo e(Auth::user()->created_at); ?></small><br>
+                                </p>
+                                </div>
+                              </li>
+                              <!-- Menu Body -->
+                              
+                              <!-- Menu Footer-->
+                              <li class="user-footer" style="background-color: #f9f9f9;">
+                            
+                             <li class="divider"></li>
+                             <li>
+                                <a href="/main/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                              </li>
+                            </ul>
                 </li>
+                 <?php else: ?>
+                    <script>window.location = "/main";</script>
+                <?php endif; ?>
             </ul>
             
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-
         <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- /.navbar-collapse -->
         </nav>

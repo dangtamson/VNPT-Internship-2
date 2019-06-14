@@ -1,14 +1,16 @@
 <?php
 // Route::get('/uploadfile', 'UploadfileController@index');
 // Route::post('/uploadfile', 'UploadfileController@upload');
- Route::get('/main', 'MainController@index');
+  Route::get('/main', 'MainController@index');
  Route::post('/main/checklogin', 'MainController@checklogin');
- Route::get('main/successlogin', 'MainController@successlogin');
+ Route::get('successlogin', 'MainController@successlogin');
  Route::get('main/successlogin1', 'MainController@successlogin1');
  Route::get('main/logout', 'MainController@logout');
- Auth::routes(['verify' => true]); 
+ Auth::routes(['verify' => true]);
 
-
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/dsnv', 'MainController@dsnv')->name('dsnv');
+// Route::get('/themnv', 'MainController@themnv')->name('themnv');
 
 Route::get('/', function(){
 	return view('login');
@@ -62,6 +64,7 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sualv/{id_lv}','LinhvucController@getSualv');
 			Route::post('sualv/{id_lv}','LinhvucController@postSualv');
 	});
+
 	Route::group(['prefix'=>'tieuchidanhgia'],function(){
 
 			Route::get('danhsach','TieuchidanhgiaController@getDanhSach');
@@ -72,6 +75,31 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sua/{id_ch}','TieuchidanhgiaController@getSua');
 			Route::post('sua/{id_ch}','TieuchidanhgiaController@postSua');
 			Route::get('danhsachan','TieuchidanhgiaController@getDanhSachan');
+	});
+
+	Route::group(['prefix'=>'khaosat'],function(){
+
+			Route::get('danhsach','KhaosatController@getDanhSach');
+			Route::get('them','KhaosatController@getThem');
+			Route::post('them','KhaosatController@postThem');
+			Route::post('search',['as'=>'us_getSearch6','uses'=>'KhaosatController@getSearch']);
+			Route::get('xoa/{id_ks}','KhaosatController@getXoa');
+			Route::get('sua/{id_ks}','KhaosatController@getSua');
+			Route::post('sua/{id_ks}','KhaosatController@postSua');
+			Route::get('xem/{id_ks}','KhaosatController@getXem');
+	});
+
+	Route::group(['prefix'=>'phieukhaosat'],function(){
+
+			Route::get('danhsach','PhieukhaosatController@getDanhSach');
+			Route::get('them','PhieukhaosatController@getThem');
+			Route::post('them','PhieukhaosatController@postThem');
+			Route::post('search',['as'=>'us_getSearch7','uses'=>'PhieukhaosatController@getSearch']);
+			Route::get('xoa/{id_pks}','PhieukhaosatController@getXoa');
+			Route::get('sua/{id_pks}','PhieukhaosatController@getSua');
+			Route::post('sua/{id_pks}','PhieukhaosatController@postSua');
+			Route::get('xem/{id_pks}','PhieukhaosatController@getXem');
+
 	});
 });
 

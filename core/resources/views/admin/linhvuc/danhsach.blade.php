@@ -46,12 +46,14 @@
 								<th>ID</th>
 								<th>TÊN LĨNH VỰC</th>
 								<th>NGÀY TẠO</th>
+								<th>CẬP NHẬT MỚI NHẤT</th>
 							</tr>
 						</THEAD>
 						
 							<td>{{$id_linhvuc->id_lv}}</td>										
 							<td>{{$id_linhvuc->tenlv}}</td>
 							<td>{{$id_linhvuc->created_at}}</td>
+							<td>{{$id_linhvuc->updated_at}}</td>
 							<td><i><a href="sualv/{{$id_linhvuc->id_lv}}">edit</a></i></td>
 							<td><i><a href="xoalv/{{$id_linhvuc->id_lv}}">delete</a></i></td>
 
@@ -63,6 +65,7 @@
 									<th>ID</th>
 									<th>TÊN LĨNH VỰC</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							@foreach($linhvuc as $u)
@@ -70,6 +73,7 @@
 									<td>{{$u->id_lv}}</td>
 									<td>{{$u->tenlv}}</td>						
 									<td>{{$u->created_at}}</td>
+									<td>{{$u->updated_at}}</td>
 									<td><i><a href="sualv/{{$u->id_lv}}">edit</a></i></td>
 									<td><i><a href="xoalv/{{$u->id_lv}}">delete</a></i></td>
 

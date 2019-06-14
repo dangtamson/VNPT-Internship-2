@@ -49,11 +49,13 @@
 									<th>ID</th>
 									<th>TÊN CHỨC VỤ</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							<td><?php echo e($id_chucvu->id_cv); ?></td>										
 							<td><?php echo e($id_chucvu->tencv); ?></td>
 							<td><?php echo e($id_chucvu->created_at); ?></td>
+							<td><?php echo e($id_chucvu->updated_at); ?></td>
 							<td><i><a href="suacv/<?php echo e($id_chucvu->id_cv); ?>">edit</a></i></td>
 							<td><i><a href="xoacv/<?php echo e($id_chucvu->id_cv); ?>">delete</a></i></td>
 
@@ -65,6 +67,7 @@
 									<th>ID</th>
 									<th>TÊN CHỨC VỤ</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							<?php $__currentLoopData = $chucvu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -72,6 +75,7 @@
 									<td><?php echo e($u->id_cv); ?></td>
 									<td><?php echo e($u->tencv); ?></td>						
 									<td><?php echo e($u->created_at); ?></td>
+									<td><?php echo e($u->updated_at); ?></td>
 									<td><i><a href="suacv/<?php echo e($u->id_cv); ?>">edit</a></i></td>
 									<td><i><a href="xoacv/<?php echo e($u->id_cv); ?>">delete</a></i></td>
 

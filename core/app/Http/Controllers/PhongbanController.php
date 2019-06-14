@@ -34,7 +34,7 @@ class PhongbanController extends Controller
             
         ],
         [
-            'tenpb.requied'=>'Bạn chưa nhập tên người dùng !',
+            'tenpb.requied'=>'Bạn chưa nhập tên phòng ban !',
             'tenpb.min'=>'Tên người dùng ít nhất 4 ký tự !',
             'tenpb.max'=>'Tên người dùng tối đa 6 ký tự !',        
         ]);
@@ -77,12 +77,22 @@ class PhongbanController extends Controller
            
         ]);
 
+            $taikhoan = DB::table('phongban')->where('tenpb',$request->tenpb)->value('tenpb');
+
+
+        if(isset($taikhoan) != '')
+        {  
+
+            return redirect('admin/phongban/danhsach/')->with('thongbao2',''.$taikhoan.' đã tồn tại !');
             
+
+        }
+        else
             $phongban->tenpb = $request->tenpb;
-            $phongban->created_at = Carbon::now();
             $phongban->updated_at = Carbon::now();
             $phongban->save();
-            return redirect('admin/phongban/sua/'.$id_pb)->with('thongbao','Sửa thành công');
+            return redirect('admin/phongban/danhsach/')->with('thongbao','Sửa thành công');
+
     }
 
     public function getXoa($id_pb){

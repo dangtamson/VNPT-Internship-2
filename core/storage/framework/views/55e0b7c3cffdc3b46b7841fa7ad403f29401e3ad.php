@@ -8,12 +8,13 @@
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard
                             </li>
-                     </div>
+                        </ol>
+                    </div>
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid --
         </div>
         <!-- /#page-wrapper -->
-<?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
 <?php /**PATH D:\thuctap\VNPT-Internship-2\trunk\core\resources\views/successlogin1.blade.php ENDPATH**/ ?>

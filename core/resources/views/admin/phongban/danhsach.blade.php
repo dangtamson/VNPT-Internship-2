@@ -48,6 +48,7 @@
                                     <th>ID</th>
                                     <th>TÊN PHÒNG BAN</th>
                                     <th>NGÀY TẠO</th>
+                                    <th>CẬP NHẬT MỚI NHẤT</th>
 
                                 </tr>
                             </THEAD>
@@ -55,6 +56,7 @@
                             <td>{{$id_pb->tenpb}}</td>
                             
                             <td>{{$id_pb->created_at}}</td>
+                            <td>{{$id_pb->updated_at}}</td>
                             <td><i><a href="sua/{{$id_pb->id_pb}}">edit</a></i></td>
                             <td><i><a href="xoa/{{$id_pb->id_pb}}">delete</a></i></td>
                     </table>
@@ -65,6 +67,7 @@
                                     <th>ID</th>
                                     <th>TÊN PHÒNG BAN</th>
                                     <th>NGÀY TẠO</th>
+                                    <th>CẬP NHẬT MỚI NHẤT</th>
 
                                 </tr>
                             </THEAD>
@@ -73,6 +76,7 @@
                                     <td>{{$u->id_pb}}</td>
                                     <td>{{$u->tenpb}}</td>
                                     <td>{{$u->created_at}}</td>
+                                    <td>{{$u->updated_at}}</td>
                                     <td><i><a href="sua/{{$u->id_pb}}">edit</a></i></td>
                                     <td><i><a href="xoa/{{$u->id_pb}}">delete</a></i></td>
                                 </tr>

@@ -44,7 +44,7 @@ class LinhvucController extends Controller
         if(isset($taikhoan) != '')
         {  
 
-            return redirect('admin/linhvuc/themlv')->with('thongbao2','tenlv'.$taikhoan.' đã tồn tại !');
+            return redirect('admin/linhvuc/themlv')->with('thongbao2',''.$taikhoan.' đã tồn tại !');
             
 
         }
@@ -72,12 +72,22 @@ class LinhvucController extends Controller
         [
              'tenlv.requied'=>'Bạn chưa nhập tên lĩnh vực !'     
            
-        ]);    
+        ]);     
+        $taikhoan = DB::table('linhvuc')->where('tenlv',$request->tenlv)->value('tenlv');
+
+
+        if(isset($taikhoan) != '')
+        {  
+
+            return redirect('admin/linhvuc/danhsachlv')->with('thongbao2',''.$taikhoan.' đã tồn tại !');
+            
+
+        }
+        else
             $linhvuc->tenlv = $request->tenlv;
-            $linhvuc->created_at = Carbon::now();
             $linhvuc->updated_at = Carbon::now();
             $linhvuc->save();
-            return redirect('admin/linhvuc/sualv/'.$id_lv)->with('thongbao','Sửa thành công');
+            return redirect('admin/linhvuc/danhsachlv')->with('thongbao','Sửa thành công');
     }
 
     public function getXoalv($id_lv){

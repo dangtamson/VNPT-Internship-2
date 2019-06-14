@@ -41,7 +41,7 @@
                             <td><input type="text" name="noidungch" class="form-control" placeholder="Nhập nội dung"></td>
                         </tr>
                        
-                        <tr>
+                        <!-- <tr>
                             <td><label class="control-label">Trạng thái: </label></td>
                             <td>
                                 <select name="trangthai" class="form-control" id="gioitinh">
@@ -50,7 +50,7 @@
                                     
                                 </select>
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td><label class="control-label">Lĩnh vực: </label></td>
                             <td>
@@ -63,6 +63,18 @@
                                 </select>
                             </td>
                         </tr>
+                        <!-- <tr>
+                            <td><label class="control-label">Đợt khảo sát: </label></td>
+                            <td>
+                                <select name="id_ks" class="form-control" id="sel1">
+
+                                    @foreach ($khaosat_array as $data)
+                                    <option value="{{ $data->id_ks }}">{{ $data->tenks}}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </td>
+                        </tr> -->
                         
                         <tr style="background-color: white">
                             <td colspan="2" align="center">

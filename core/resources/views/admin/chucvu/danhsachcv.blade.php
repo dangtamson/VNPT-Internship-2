@@ -47,11 +47,13 @@
 									<th>ID</th>
 									<th>TÊN CHỨC VỤ</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							<td>{{$id_chucvu->id_cv}}</td>										
 							<td>{{$id_chucvu->tencv}}</td>
 							<td>{{$id_chucvu->created_at}}</td>
+							<td>{{$id_chucvu->updated_at}}</td>
 							<td><i><a href="suacv/{{$id_chucvu->id_cv}}">edit</a></i></td>
 							<td><i><a href="xoacv/{{$id_chucvu->id_cv}}">delete</a></i></td>
 
@@ -63,6 +65,7 @@
 									<th>ID</th>
 									<th>TÊN CHỨC VỤ</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							@foreach($chucvu as $u)
@@ -70,6 +73,7 @@
 									<td>{{$u->id_cv}}</td>
 									<td>{{$u->tencv}}</td>						
 									<td>{{$u->created_at}}</td>
+									<td>{{$u->updated_at}}</td>
 									<td><i><a href="suacv/{{$u->id_cv}}">edit</a></i></td>
 									<td><i><a href="xoacv/{{$u->id_cv}}">delete</a></i></td>
 

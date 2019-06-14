@@ -3,9 +3,7 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li style="background:#1b926c;color:#fff;">
-                        <a href="index.html" style="color:#fff;"><i class="fas fa-chalkboard-teacher"></i> Dashboard</a>
-                    </li>                    
+                                      
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo_dm"><i class="fas fa-users-cog"></i> Quản lý nhân viên <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_dm" class="collapse">
@@ -59,9 +57,8 @@
                                                         
                         </ul>
                     </li>
-					 </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_bv"><i class="far fa-question-circle"></i> Quản lý tiêu chí đánh giá <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_bv" class="collapse">
                             <li>
                                 <a href="/admin/tieuchidanhgia/them"><i class="fas fa-plus"></i> Thêm mới</a>
@@ -70,27 +67,37 @@
                              <li>
                                 <a href="/admin/tieuchidanhgia/danhsach"><i class="fas fa-list"></i> Danh sách tiêu chí</a>
                             </li>
-                            <li>
-                                <a href="/admin/tieuchidanhgia/danhsachan"><i class="far fa-list-alt"></i> Tiêu chí đã ẩn</a>
+                           <!--  <li>
+                                <a href="/admin/tieuchidanhgia/danhsachan"><i class="far fa-list-alt"></i> Danh sách tiêu chí đã ẩn</a>
                             </li>
-                            
+                             -->
                             
                         </ul>
                     </li>
 					
 					<li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_sb"><i class="fas fa-poll"></i> Thống kê <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo_sb" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_ks"><i class="fas fa-poll"></i> Quản lý đợt khảo sát <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_ks" class="collapse">
                             <li>
-                                <a href="#">Thêm mới</a>
+                                <a href="/admin/khaosat/them">Thêm mới</a>
                             </li>
                             <li>
-                                <a href="#">Danh sách</a>
+                                <a href="/admin/khaosat/danhsach">Danh sách</a>
                             </li>
                         </ul>
                     </li> 
                     	
-					
+					<li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo_pks"><i class="fas fa-poll"></i> Quản lý phiếu khảo sát <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo_pks" class="collapse">
+                            <li>
+                                <a href="/admin/phieukhaosat/them">Thêm mới</a>
+                            </li>
+                            <li>
+                                <a href="/admin/phieukhaosat/danhsach">Danh sách</a>
+                            </li>
+                        </ul>
+                    </li> 
                    			
                 </ul>
             </div>

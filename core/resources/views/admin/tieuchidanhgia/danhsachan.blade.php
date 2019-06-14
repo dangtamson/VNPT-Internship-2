@@ -48,7 +48,9 @@
 									<th>NỘI DUNG</th>
 									<th>TRẠNG THÁI</th>
 									<th>LĨNH VỰC</th>
+									<th>ĐỢT KHẢO SÁT</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -67,8 +69,16 @@
 										@endforeach
 
 									</td>
-									
+									<td>
+										@foreach($khaosat as $ks)
+											@if($id_user->id_ks == $ks->id_ks)
+												{{$ks->tenks}}
+											@endif
+										@endforeach
+
+									</td>
 									<td>{{$id_user->created_at}}</td>
+									<td>{{$id_user->updated_at}}</td>
 									<td><i><a href="sua/{{$id_user->id_ch}}">edit</a></i></td>
 									<td><i><a href="xoa/{{$id_user->id_ch}}">delete</a></i></td>
 
@@ -81,7 +91,9 @@
 									<th>NỘI DUNG</th>
 									<th>TRẠNG THÁI</th>
 									<th>LĨNH VỰC</th>
+									<th>ĐỢT KHẢO SÁT</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -102,8 +114,17 @@
 										@endforeach
 
 									</td>
+									<td>
+										@foreach($khaosat as $ks)
+											@if($u->id_ks == $ks->id_ks)
+												{{$ks->tenks}}
+											@endif
+										@endforeach
+
+									</td>
 									
 									<td>{{$u->created_at}}</td>
+									<td>{{$u->updated_at}}</td>
 									<td><i><a href="sua/{{$u->id_ch}}">edit</a></i></td>
 									<td><i><a href="xoa/{{$u->id_ch}}">delete</a></i></td>
 									

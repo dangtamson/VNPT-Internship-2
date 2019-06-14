@@ -75,8 +75,20 @@
                                     
                                 </select>
                             </td>
+                            
                         </tr>
-                        
+                        <tr>
+                            <td><label class="control-label">Đợt khảo sát: </label></td>
+                            <td>
+                                <select name="id_ks" class="form-control" id="sel1">
+
+                                    <?php $__currentLoopData = $khaosat_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($data->id_ks); ?>"><?php echo e($data->tenks); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    
+                                </select>
+                            </td>
+                        </tr>
                         <tr style="background-color: white">
                             <td colspan="2" align="center">
                                 <button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Lưu</button>

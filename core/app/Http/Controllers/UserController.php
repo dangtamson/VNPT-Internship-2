@@ -129,7 +129,6 @@ class UserController extends Controller
             $user->id_cv = $request->id_cv;
             $user->quyen = $request->quyen;
             $user->gioitinh = $request->gioitinh;
-            $user->created_at = Carbon::now();
             $user->updated_at = Carbon::now();
             $user->save();
             return redirect('admin/user/sua/'.$id)->with('thongbao','Sửa thành công');

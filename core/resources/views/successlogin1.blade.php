@@ -8,11 +8,12 @@
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard
                             </li>
-                     </div>
+                        </ol>
+                    </div>
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid --
         </div>
         <!-- /#page-wrapper -->
-@include('layouts.footer')
+@include('layouts.footer') 

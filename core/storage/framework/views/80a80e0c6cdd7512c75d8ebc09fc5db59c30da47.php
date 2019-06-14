@@ -50,6 +50,7 @@
                                     <th>ID</th>
                                     <th>TÊN PHÒNG BAN</th>
                                     <th>NGÀY TẠO</th>
+                                    <th>CẬP NHẬT MỚI NHẤT</th>
 
                                 </tr>
                             </THEAD>
@@ -57,6 +58,7 @@
                             <td><?php echo e($id_pb->tenpb); ?></td>
                             
                             <td><?php echo e($id_pb->created_at); ?></td>
+                            <td><?php echo e($id_pb->updated_at); ?></td>
                             <td><i><a href="sua/<?php echo e($id_pb->id_pb); ?>">edit</a></i></td>
                             <td><i><a href="xoa/<?php echo e($id_pb->id_pb); ?>">delete</a></i></td>
                     </table>
@@ -67,6 +69,7 @@
                                     <th>ID</th>
                                     <th>TÊN PHÒNG BAN</th>
                                     <th>NGÀY TẠO</th>
+                                    <th>CẬP NHẬT MỚI NHẤT</th>
 
                                 </tr>
                             </THEAD>
@@ -75,6 +78,7 @@
                                     <td><?php echo e($u->id_pb); ?></td>
                                     <td><?php echo e($u->tenpb); ?></td>
                                     <td><?php echo e($u->created_at); ?></td>
+                                    <td><?php echo e($u->updated_at); ?></td>
                                     <td><i><a href="sua/<?php echo e($u->id_pb); ?>">edit</a></i></td>
                                     <td><i><a href="xoa/<?php echo e($u->id_pb); ?>">delete</a></i></td>
                                 </tr>

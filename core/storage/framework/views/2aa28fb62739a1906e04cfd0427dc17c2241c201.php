@@ -48,12 +48,14 @@
 								<th>ID</th>
 								<th>TÊN LĨNH VỰC</th>
 								<th>NGÀY TẠO</th>
+								<th>CẬP NHẬT MỚI NHẤT</th>
 							</tr>
 						</THEAD>
 						
 							<td><?php echo e($id_linhvuc->id_lv); ?></td>										
 							<td><?php echo e($id_linhvuc->tenlv); ?></td>
 							<td><?php echo e($id_linhvuc->created_at); ?></td>
+							<td><?php echo e($id_linhvuc->updated_at); ?></td>
 							<td><i><a href="sualv/<?php echo e($id_linhvuc->id_lv); ?>">edit</a></i></td>
 							<td><i><a href="xoalv/<?php echo e($id_linhvuc->id_lv); ?>">delete</a></i></td>
 
@@ -65,6 +67,7 @@
 									<th>ID</th>
 									<th>TÊN LĨNH VỰC</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 								</tr>
 							</THEAD>
 							<?php $__currentLoopData = $linhvuc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -72,6 +75,7 @@
 									<td><?php echo e($u->id_lv); ?></td>
 									<td><?php echo e($u->tenlv); ?></td>						
 									<td><?php echo e($u->created_at); ?></td>
+									<td><?php echo e($u->updated_at); ?></td>
 									<td><i><a href="sualv/<?php echo e($u->id_lv); ?>">edit</a></i></td>
 									<td><i><a href="xoalv/<?php echo e($u->id_lv); ?>">delete</a></i></td>
 

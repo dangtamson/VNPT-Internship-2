@@ -20,6 +20,17 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
+  'maddhatter/laravel-fullcalendar' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Calendar' => 'MaddHatter\\LaravelFullcalendar\\Facades\\Calendar',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 

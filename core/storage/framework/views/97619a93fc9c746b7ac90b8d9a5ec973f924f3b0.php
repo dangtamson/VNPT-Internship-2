@@ -1,4 +1,4 @@
- <div style="margin-top: 520px;" id="footer">
+ <div id="footer">
             <p>Bản quyền thuộc về team_tttt@vnpt.com</p>
         </div>
     </div>

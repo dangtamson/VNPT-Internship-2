@@ -54,6 +54,7 @@
 						<th>CHỨC VỤ</th>
 						<th>QUYỀN</th>
 						<th>NGÀY TẠO</th>
+						<th>CẬP NHẬT MỚI NHẤT</th>
 
 						</tr>
 						</THEAD>
@@ -91,6 +92,7 @@
 								@endif
 							</td>
 							<td>{{$id_user->created_at}}</td>
+							<td>{{$id_user->updated_at}}</td>
 							<td><i><a href="sua/{{$id_user->id}}">edit</a></i></td>
 							<td><i><a href="xoa/{{$id_user->id}}">delete</a></i></td>
 							<td><i><a href="getpass/{{$id_user->id}}">View Password</a></i></td>
@@ -111,6 +113,7 @@
 								<th>CHỨC VỤ</th>
 								<th>QUYỀN</th>
 								<th>NGÀY TẠO</th>
+								<th>CẬP NHẬT MỚI NHẤT</th>
 
 							</tr>
 							</THEAD>
@@ -151,6 +154,7 @@
 										@endif
 									</td>
 									<td>{{$u->created_at}}</td>
+									<td>{{$u->updated_at}}</td>
 									<td><i><a href="sua/{{$u->id}}">edit</a></i></td>
 									<td><i><a href="xoa/{{$u->id}}">delete</a></i></td>
 									<td><i><a href="getpass/{{$u->id}}">View Password</a></i></td>

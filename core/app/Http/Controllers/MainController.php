@@ -28,8 +28,9 @@ class MainController extends Controller
            if(Auth::user()->quyen == 0)
                 return redirect('main/successlogin1');
             else
-                return redirect('main/successlogin');
-           
+                return redirect('successlogin');
+           else
+                 return back()->with('error', 'Sai tài khoản hoặc mật khẩu !');
         
     }
 

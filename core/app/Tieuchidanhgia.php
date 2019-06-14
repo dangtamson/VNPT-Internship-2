@@ -9,7 +9,7 @@ class Tieuchidanhgia extends Model
     protected $table = 'tieuchidanhgia';
     protected $primaryKey = 'id_ch';
     protected $fillable = [
-        'noidungch', 'trangthai', 'id_lv'
+        'noidungch', 'id_lv'
     ];
 
 public $timestamps = false;

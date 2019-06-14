@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tieuchidanhgia;
 use App\Linhvuc;
+use App\Khaosat;
 use Carbon\Carbon;
 use DB;
 class TieuchidanhgiaController extends Controller
@@ -22,16 +23,18 @@ class TieuchidanhgiaController extends Controller
         }
     }
     public function getDanhSach(){
-        $tieuchidanhgia = Tieuchidanhgia::where('trangthai',1)->Paginate(5);
+        $tieuchidanhgia = Tieuchidanhgia::Paginate(5);
         $linhvuc = Linhvuc::all();
-        return view('admin.tieuchidanhgia.danhsach',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc]);
+        $khaosat = Khaosat::all();
+        return view('admin.tieuchidanhgia.danhsach',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc, 'khaosat'=>$khaosat]);
     }
 
-    public function getDanhSachan(){
-        $tieuchidanhgia = Tieuchidanhgia::where('trangthai',0)->Paginate(5);
-        $linhvuc = Linhvuc::all();
-        return view('admin.tieuchidanhgia.danhsachan',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc]);
-    }
+    // public function getDanhSachan(){
+    //     $tieuchidanhgia = Tieuchidanhgia::where('trangthai',0)->Paginate(5);
+    //     $linhvuc = Linhvuc::all();
+    //     $khaosat = Khaosat::all();
+    //     return view('admin.tieuchidanhgia.danhsachan',['tieuchidanhgia'=>$tieuchidanhgia, 'linhvuc'=>$linhvuc, 'khaosat'=>$khaosat]);
+    // }
 
     public function getThem(){
         return view('admin.tieuchidanhgia.them');
@@ -47,27 +50,28 @@ class TieuchidanhgiaController extends Controller
        
         ]);
 
-        $cauhoi = DB::table('tieuchidanhgia')->where('noidungch',$request->noidungch)->value('noidungch');
+        // $cauhoi = DB::table('tieuchidanhgia')->where('noidungch',$request->noidungch)->value('noidungch');z
 
 
-        if(isset($cauhoi) != '')
-        {  
+        // if(isset($cauhoi) != '')
+        // {  
 
-            return redirect('admin/tieuchidanhgia/them')->with('thongbao2',''.$cauhoi.' đã tồn tại !');
+        //     return redirect('admin/tieuchidanhgia/them')->with('thongbao2',''.$cauhoi.' đã tồn tại !');
             
 
-        }
-        else
-        {
+        // }
+        // else
+        // {
             $tieuchidanhgia = new Tieuchidanhgia;
             $tieuchidanhgia->noidungch = $request->noidungch;
             $tieuchidanhgia->id_lv = $request->id_lv;
-            $tieuchidanhgia->trangthai = $request->trangthai;
+            // $tieuchidanhgia->trangthai = $request->trangthai;
+            // $tieuchidanhgia->id_ks = $request->id_ks;
             $tieuchidanhgia->created_at = Carbon::now();
             $tieuchidanhgia->updated_at = Carbon::now();
             $tieuchidanhgia->save();
-            return redirect('admin/tieuchidanhgia/them')->with('thongbao','Thêm thành công');
-        }
+            return redirect('admin/tieuchidanhgia/danhsach')->with('thongbao','Thêm thành công');
+
     }
 
         public function getSua($id_ch){
@@ -87,15 +91,25 @@ class TieuchidanhgiaController extends Controller
             'noidungch.required'=>'Bạn chưa nhập nội dung câu hỏi !'
        
         ]);
+        // $cauhoi = DB::table('tieuchidanhgia')->where('noidungch',$request->noidungch)->value('noidungch');
 
+
+        // if(isset($cauhoi) != '')
+        // {  
+
+        //     return redirect('admin/tieuchidanhgia/danhsach')->with('thongbao2',''.$cauhoi.' đã tồn tại !');
+            
+
+        // }
+        // else
             
             $tieuchidanhgia->noidungch = $request->noidungch;
             $tieuchidanhgia->id_lv = $request->id_lv;
-            $tieuchidanhgia->trangthai = $request->trangthai;
-            $tieuchidanhgia->created_at = Carbon::now();
+            // $tieuchidanhgia->id_ks = $request->id_ks;
+            // $tieuchidanhgia->trangthai = $request->trangthai;
             $tieuchidanhgia->updated_at = Carbon::now();
             $tieuchidanhgia->save();
-            return redirect('admin/tieuchidanhgia/sua/'.$id_ch)->with('thongbao','Sửa thành công');
+            return redirect('admin/tieuchidanhgia/danhsach/')->with('thongbao','Sửa thành công');
     }
 
     public function getXoa($id_ch){

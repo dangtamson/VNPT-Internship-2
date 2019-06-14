@@ -57,6 +57,7 @@
 									<th>CHỨC VỤ</th>
 									<th>QUYỀN</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -100,6 +101,7 @@
 								<?php endif; ?>
 							</td>
 							<td><?php echo e($id_user->created_at); ?></td>
+							<td><?php echo e($id_user->updated_at); ?></td>
 							<td><i><a href="sua/<?php echo e($id_user->id); ?>">edit</a></i></td>
 							<td><i><a href="xoa/<?php echo e($id_user->id); ?>">delete</a></i></td>
 							<td><i><a href="getpass/<?php echo e($id_user->id); ?>">View Password</a></i></td>
@@ -119,6 +121,7 @@
 									<th>CHỨC VỤ</th>
 									<th>QUYỀN</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -165,6 +168,7 @@
 										<?php endif; ?>
 									</td>
 									<td><?php echo e($u->created_at); ?></td>
+									<td><?php echo e($u->updated_at); ?></td>
 									<td><i><a href="sua/<?php echo e($u->id); ?>">edit</a></i></td>
 									<td><i><a href="xoa/<?php echo e($u->id); ?>">delete</a></i></td>
 									<td><i><a href="getpass/<?php echo e($u->id); ?>">View Password</a></i></td>

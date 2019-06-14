@@ -50,7 +50,9 @@
 									<th>NỘI DUNG</th>
 									<th>TRẠNG THÁI</th>
 									<th>LĨNH VỰC</th>
+									<th>ĐỢT KHẢO SÁT</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -72,8 +74,17 @@
 										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 									</td>
-									
+									<td>
+										<?php $__currentLoopData = $khaosat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ks): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+											<?php if($id_user->id_ks == $ks->id_ks): ?>
+												<?php echo e($ks->tenks); ?>
+
+											<?php endif; ?>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+									</td>
 									<td><?php echo e($id_user->created_at); ?></td>
+									<td><?php echo e($id_user->updated_at); ?></td>
 									<td><i><a href="sua/<?php echo e($id_user->id_ch); ?>">edit</a></i></td>
 									<td><i><a href="xoa/<?php echo e($id_user->id_ch); ?>">delete</a></i></td>
 
@@ -86,7 +97,9 @@
 									<th>NỘI DUNG</th>
 									<th>TRẠNG THÁI</th>
 									<th>LĨNH VỰC</th>
+									<th>ĐỢT KHẢO SÁT</th>
 									<th>NGÀY TẠO</th>
+									<th>CẬP NHẬT MỚI NHẤT</th>
 
 								</tr>
 							</THEAD>
@@ -110,8 +123,18 @@
 										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 									</td>
+									<td>
+										<?php $__currentLoopData = $khaosat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ks): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+											<?php if($u->id_ks == $ks->id_ks): ?>
+												<?php echo e($ks->tenks); ?>
+
+											<?php endif; ?>
+										<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+									</td>
 									
 									<td><?php echo e($u->created_at); ?></td>
+									<td><?php echo e($u->updated_at); ?></td>
 									<td><i><a href="sua/<?php echo e($u->id_ch); ?>">edit</a></i></td>
 									<td><i><a href="xoa/<?php echo e($u->id_ch); ?>">delete</a></i></td>
 									

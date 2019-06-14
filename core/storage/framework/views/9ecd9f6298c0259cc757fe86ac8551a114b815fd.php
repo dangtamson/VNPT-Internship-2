@@ -1,4 +1,4 @@
-<?php include('core/resources/views/layouts/header.blade.php')?>
+<?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <section class="content-header">
       <h1>
@@ -41,6 +41,7 @@
                         <tr style="background-color: white">
                             <td colspan="2" align="center">
                                 <button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Sửa</button>
+                                <a href="/admin/phongban/danhsach" name="btn_back" class="btn btn-info" style="width: 8em">Back</a>
                             </td>
                         </tr>
                     </table>
@@ -55,23 +56,4 @@
 <?php $__env->startSection('script'); ?>
 
 <?php $__env->stopSection(); ?>
- <div id="footer">
-            <p>Bản quyền thuộc về team_tttt@vnpt.com</p>
-        </div>
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../../../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../../js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../../../js/plugins/morris/raphael.min.js"></script>
-    <script src="../../../js/plugins/morris/morris.min.js"></script>
-    <script src="../../../js/plugins/morris/morris-data.js"></script>
-
-</body>
-
-</html><?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/admin/linhvuc/sua.blade.php ENDPATH**/ ?>
+  <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/admin/linhvuc/sua.blade.php ENDPATH**/ ?>

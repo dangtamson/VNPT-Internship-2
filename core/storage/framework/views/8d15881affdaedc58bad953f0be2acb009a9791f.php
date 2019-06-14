@@ -1,3 +1,11 @@
+<!-- <?php 
+	session_start();
+	  if (!isset($_SESSION['username']))
+	  {
+         header('Location: login.php'); 
+       }
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +39,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+     
+     
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
 
 </head>
 
@@ -49,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/main/successlogin" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
+                <a class="navbar-brand" href="/main/successlogin1" style="padding-left: 30px;">    QUẢN LÝ HỆ THỐNG</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -63,7 +77,7 @@
                               <!-- User image -->
                               <li class="user-header" style="background-color: #3c8dbc; background:hover">
                                 <div>
-                                    <img src="<?php echo e(asset('css/123.jpg')); ?>" class="img-circle" alt="User Image" style="height: 75px;margin-left: 56px;">
+                                    <img src="<?php echo e(asset('css/avatar.png')); ?>" class="img-circle" alt="User Image" style="height: 75px;margin-left: 56px;">
                                 </div>
                                 <div align="center">
                                 <p style="color: rgba(255,255,255,0.8);">

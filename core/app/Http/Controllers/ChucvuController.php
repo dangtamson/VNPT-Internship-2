@@ -73,7 +73,6 @@ class ChucvuController extends Controller
            
         ]);    
             $chucvu->tencv = $request->tencv;
-            $chucvu->created_at = Carbon::now();
             $chucvu->updated_at = Carbon::now();
             $chucvu->save();
             return redirect('admin/chucvu/suacv/'.$id_cv)->with('thongbao','Sửa thành công');
