@@ -1,20 +1,20 @@
-<?php include('core/resources/views/layouts/header.blade.php')?>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Danh sách <small>bình luận</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid --
+<div>
+    <div class="col-lg-7">
+    <?php if(session('thongbao')): ?>
+        <div class="alert alert-success">
+            <?php echo e(session('thongbao')); ?>
+
         </div>
-        <!-- /#page-wrapper -->
-<?php include('core/resources/views/layouts/footer.blade.php')?> 
+    <?php endif; ?>
+
+    <?php if(session('thongbao2')): ?>
+        <div class="alert alert-danger">
+            <?php echo e(session('thongbao2')); ?>
+
+        </div>
+    <?php endif; ?>
+
+    </div>
+<a href="khaosat">Khảo sát</a>
+
 <?php /**PATH E:\VNPT-Internship-2\trunk\core\resources\views/successlogin.blade.php ENDPATH**/ ?>

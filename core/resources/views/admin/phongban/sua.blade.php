@@ -2,7 +2,7 @@
 @include('layouts.header')
 <section class="content-header">
       <h1>
-        Sủa thông tin phòng ban
+        Sửa thông tin phòng ban
         <small>{{$phongban->tenpb}}</small>
       </h1>
 

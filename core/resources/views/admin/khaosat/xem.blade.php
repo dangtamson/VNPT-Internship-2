@@ -63,35 +63,48 @@
                                     <th>BÌNH THƯỜNG</th>
                                     <th>HÀI LÒNG</th>
                                     <th>RẤT HÀI LÒNG</th>
+                                    <th></th>
 
                                 </tr>
                             </THEAD>
                             
-                                @foreach($tieuchidanhgia as $tc)
-                                @if($khaosat->id_ks == $tc->id_ks)
-                             <tr align="left">                              
-                            <td>{{$tc->noidungch}}</td>       
-                            <td><input type="radio" name="tl" value="1"></td>
-                            <td><input type="radio" name="tl" value="2"></td>
-                            <td><input type="radio" name="tl" value="3"></td>
-                            <td><input type="radio" name="tl" value="4"></td>
-                            <td><input type="radio" name="tl" value="5"></td>
-                            </tr>
-                            @endif
+                                @foreach($phieukhaosat as $tc)
+                                    @foreach($tieuchidanhgia as $c)
+                                        @if($khaosat->id_ks == $tc->id_ks && $tc->id_ch == $c->id_ch)
+
+                               
+                               
+                                     <tr align="center">                              
+                                    <td>{{$c->noidungch}}</td>  
+                                       
+                                    <td><input type="radio" name="{{$tc->id_pks}}" value="1"></td>
+                                    <td><input type="radio" name="{{$tc->id_pks}}" value="2"></td>
+                                    <td><input type="radio" name="{{$tc->id_pks}}" value="3"></td>
+                                    <td><input type="radio" name="{{$tc->id_pks}}" value="4"></td>
+                                    <td><input type="radio" name="{{$tc->id_pks}}" value="5"></td>
+                                    <td><i><a href="/admin/phieukhaosat/xoa1/{{$tc->id_pks}}"><i style="color: red" class="fas fa-times"></i></a></i></td>
+                                   
+                                    </tr>
+                                    @endif
+                                    @endforeach
                                 @endforeach
                             
                     </table>
-                        
+                        <center>{!! $phieukhaosat->links()!!}</center>
                         <tr style="background-color: white">
                             <td colspan="2" align="center">
-                                <a href="/admin/khaosat/danhsach" name="btn_submit" class="btn btn-success" style="width: 8em">Back</a>
+                                <center>
+                                <a href="/admin/khaosat/danhsach" name="btn_submit"  class="btn btn-info"  style="width: 10em">Back</a>
+                                <a href="/admin/phieukhaosat/them" name="btn_submit" class="btn btn-success" style="width: 10em">Thêm tiêu chí</a>
+                                </center>
                             </td>
                         </tr>
                    
                 </div>
             </form>
         </div>
+
 </div>
 
-           
-     @include('layouts.footer')
+
+@include('layouts.footer')

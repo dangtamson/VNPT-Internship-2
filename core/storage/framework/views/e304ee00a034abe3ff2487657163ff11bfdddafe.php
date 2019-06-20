@@ -57,7 +57,7 @@
 							<td><input type="text" name="email" class="form-control" placeholder="Họ tên" value="<?php echo e($user->email); ?>"></td>
 						</tr>
 						<tr>
-                            <tr>
+                           
 							<td><label class="control-label">Giới tính: </label></td>
 							<td>
 								<select name="gioitinh" class="form-control" id="sel1">
@@ -77,7 +77,7 @@
 									</option>
 								</select>
 							</td>
-						</tr>
+						
                         </tr>
 						<tr>
 							<td><label class="control-label">Phòng ban: </label></td>

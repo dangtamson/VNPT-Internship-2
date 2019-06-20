@@ -32,6 +32,12 @@
 
                 </div>
             <?php endif; ?>
+            <?php if(session('thongbao2')): ?>
+                <div class="alert alert-danger">
+                    <?php echo e(session('thongbao2')); ?>
+
+                </div>
+            <?php endif; ?>
 
 
             <form action="them" method="post" class="form-horizontal"> 

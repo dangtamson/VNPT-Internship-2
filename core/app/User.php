@@ -42,6 +42,12 @@ class User extends Authenticatable
         return $this->belongsTo('App\Phongban','id_pb','id_pb');
     }
 
+    public function chucvu()
+    {
+        return $this->belongsTo('App\Chucvu','id_cv','id_cv');
+    }
+    
     protected $table = 'users';
     
+
 }

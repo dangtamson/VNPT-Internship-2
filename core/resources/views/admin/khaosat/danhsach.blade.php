@@ -68,7 +68,7 @@
                                     </td>
                             <td>{{$id_ks->created_at}}</td>
                             <td>{{$id_ks->updated_at}}</td>
-                            <!-- <td><i><a href="sua/{{$id_ks->id_ks}}">view more</a></i></td> -->
+                            <td><i><a href="sua/{{$id_ks->id_ks}}">view more</a></i></td>
                             <td><i><a href="sua/{{$id_ks->id_ks}}">edit</a></i></td>
                             <td><i><a href="xoa/{{$id_ks->id_ks}}">delete</a></i></td>
                     </table>
@@ -101,7 +101,7 @@
                                     </td>
                                     <td>{{$u->created_at}}</td>
                                     <td>{{$u->updated_at}}</td>
-                                    <!-- <td><i><a href="xem/{{$u->id_ks}}">view more</a></i></td> -->
+                                    <td><i><a href="xem/{{$u->id_ks}}">view more</a></i></td>
                                     <td><i><a href="sua/{{$u->id_ks}}">edit</a></i></td>
                                     <td><i><a href="xoa/{{$u->id_ks}}">delete</a></i></td>
                                 </tr>

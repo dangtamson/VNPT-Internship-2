@@ -30,6 +30,11 @@
                     {{session('thongbao')}}
                 </div>
             @endif
+            @if(session('thongbao2'))
+                <div class="alert alert-danger">
+                    {{session('thongbao2')}}
+                </div>
+            @endif
 
 
             <form action="them" method="post" class="form-horizontal"> 

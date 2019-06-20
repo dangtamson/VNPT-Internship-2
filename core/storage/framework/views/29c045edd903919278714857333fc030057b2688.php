@@ -87,7 +87,7 @@
                         </ul>
                     </li> 
                     	
-					<li>
+					<!-- <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo_pks"><i class="fas fa-poll"></i> Quản lý phiếu khảo sát <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo_pks" class="collapse">
                             <li>
@@ -97,7 +97,7 @@
                                 <a href="/admin/phieukhaosat/danhsach">Danh sách</a>
                             </li>
                         </ul>
-                    </li> 
+                    </li>  -->
                    			
                 </ul>
             </div><?php /**PATH D:\thuctap\VNPT-Internship-2\trunk\core\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

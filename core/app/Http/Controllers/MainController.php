@@ -4,6 +4,10 @@ use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use App\Chucvu;
+use App\Phongban;
+use Carbon\Carbon;
+use DB;
 
 class MainController extends Controller
 { 
@@ -28,7 +32,7 @@ class MainController extends Controller
            if(Auth::user()->quyen == 0)
                 return redirect('main/successlogin1');
             else
-                return redirect('successlogin');
+                return redirect('successlogin2');
            else
                  return back()->with('error', 'Sai tài khoản hoặc mật khẩu !');
         
@@ -38,10 +42,11 @@ class MainController extends Controller
     {
      return view('successlogin1');
     }
-    function successlogin()
+    function successlogin2()
     {
-     return view('successlogin');
+     return view('successlogin2');
     }
+
 
     function logout()
     {
@@ -49,6 +54,21 @@ class MainController extends Controller
      return redirect('/main');
     }
 
+    public function userNhanVien(){
+        $ds_user1 =User::where('quyen',1)->Paginate(3);
+        $chucvu = Chucvu::all();
+        $phongban = Phongban::all();
+        return view('successlogin2',['ds_user1'=>$ds_user1, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);
+       
+    }    
+
+    public function userNhanVien1(){
+        $ds_user1 =User::where('quyen',1)->Paginate(3);
+        $chucvu = Chucvu::all();
+        $phongban = Phongban::all();
+        return view('khaosat',['ds_user1'=>$ds_user1, 'chucvu'=>$chucvu, 'phongban'=>$phongban]);
+       
+    } 
     
 }
 

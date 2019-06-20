@@ -72,7 +72,7 @@
                                     </td>
                             <td><?php echo e($id_ks->created_at); ?></td>
                             <td><?php echo e($id_ks->updated_at); ?></td>
-                            <!-- <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">view more</a></i></td> -->
+                            <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">view more</a></i></td>
                             <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">edit</a></i></td>
                             <td><i><a href="xoa/<?php echo e($id_ks->id_ks); ?>">delete</a></i></td>
                     </table>
@@ -107,7 +107,7 @@
                                     </td>
                                     <td><?php echo e($u->created_at); ?></td>
                                     <td><?php echo e($u->updated_at); ?></td>
-                                    <!-- <td><i><a href="xem/<?php echo e($u->id_ks); ?>">view more</a></i></td> -->
+                                    <td><i><a href="xem/<?php echo e($u->id_ks); ?>">view more</a></i></td>
                                     <td><i><a href="sua/<?php echo e($u->id_ks); ?>">edit</a></i></td>
                                     <td><i><a href="xoa/<?php echo e($u->id_ks); ?>">delete</a></i></td>
                                 </tr>
@@ -122,4 +122,4 @@
     </div>
      
           
-  <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\thuctap\VNPT-Internship-2\trunk\core\resources\views/admin/khaosat/danhsach.blade.php ENDPATH**/ ?>
+  <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\VNPT-Internship-2\trunk\core\resources\views/admin/khaosat/danhsach.blade.php ENDPATH**/ ?>

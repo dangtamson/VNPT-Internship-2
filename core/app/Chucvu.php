@@ -9,4 +9,9 @@ class Chucvu extends Model
         'tencv',
     ];
  public $timestamps = false;
+ 
+ function user()
+{
+	return $this->hasMany('App\User','id_cv','id_cv');
+}
    }

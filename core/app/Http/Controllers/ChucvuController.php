@@ -43,7 +43,7 @@ class ChucvuController extends Controller
         if(isset($taikhoan) != '')
         {  
 
-            return redirect('admin/chucvu/themcv')->with('thongbao2','tencv'.$taikhoan.' đã tồn tại !');
+            return redirect('admin/chucvu/themcv')->with('thongbao2',''.$taikhoan.' đã tồn tại !');
             
 
         }

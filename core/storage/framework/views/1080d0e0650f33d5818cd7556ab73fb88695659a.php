@@ -72,7 +72,7 @@
                                     </td>
                             <td><?php echo e($id_ks->created_at); ?></td>
                             <td><?php echo e($id_ks->updated_at); ?></td>
-                            <!-- <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">view more</a></i></td> -->
+                            <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">view more</a></i></td>
                             <td><i><a href="sua/<?php echo e($id_ks->id_ks); ?>">edit</a></i></td>
                             <td><i><a href="xoa/<?php echo e($id_ks->id_ks); ?>">delete</a></i></td>
                     </table>
@@ -107,7 +107,7 @@
                                     </td>
                                     <td><?php echo e($u->created_at); ?></td>
                                     <td><?php echo e($u->updated_at); ?></td>
-                                    <!-- <td><i><a href="xem/<?php echo e($u->id_ks); ?>">view more</a></i></td> -->
+                                    <td><i><a href="xem/<?php echo e($u->id_ks); ?>">view more</a></i></td>
                                     <td><i><a href="sua/<?php echo e($u->id_ks); ?>">edit</a></i></td>
                                     <td><i><a href="xoa/<?php echo e($u->id_ks); ?>">delete</a></i></td>
                                 </tr>

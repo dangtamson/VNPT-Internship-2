@@ -42,4 +42,4 @@
         <?php endif; ?>
     </ul>
 <?php endif; ?>
-<?php /**PATH D:\thuctap\VNPT-Internship-2\trunk\core\vendor\laravel\framework\src\Illuminate\Pagination/resources/views/bootstrap-4.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\VNPT-Internship-2\trunk\core\vendor\laravel\framework\src\Illuminate\Pagination/resources/views/bootstrap-4.blade.php ENDPATH**/ ?>

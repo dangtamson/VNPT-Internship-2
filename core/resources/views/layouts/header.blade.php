@@ -77,7 +77,7 @@
                               <!-- User image -->
                               <li class="user-header" style="background-color: #3c8dbc; background:hover">
                                 <div>
-                                    <img src="{{asset('css/avatar.png')}}" class="img-circle" alt="User Image" style="height: 75px;margin-left: 56px;">
+                                    <img src="https://static.myfigurecollection.net/pics/figure/big/796312.jpg" class="img-circle" alt="User Image" style="height: 75px;margin-left: 56px;">
                                 </div>
                                 <div align="center">
                                 <p style="color: rgba(255,255,255,0.8);">
@@ -109,5 +109,5 @@
         </nav>
   <div id="page-wrapper">
 
-<div class="container-fluid">
+<div class="controler- container-fluid">
 <!-- Page Heading -->

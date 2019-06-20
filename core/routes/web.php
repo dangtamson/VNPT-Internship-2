@@ -1,11 +1,12 @@
 <?php
 // Route::get('/uploadfile', 'UploadfileController@index');
 // Route::post('/uploadfile', 'UploadfileController@upload');
-  Route::get('/main', 'MainController@index');
+ Route::get('/main', 'MainController@index');
  Route::post('/main/checklogin', 'MainController@checklogin');
- Route::get('successlogin', 'MainController@successlogin');
  Route::get('main/successlogin1', 'MainController@successlogin1');
+ Route::get('successlogin2','MainController@userNhanVien');
  Route::get('main/logout', 'MainController@logout');
+
  Auth::routes(['verify' => true]);
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -87,6 +88,8 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sua/{id_ks}','KhaosatController@getSua');
 			Route::post('sua/{id_ks}','KhaosatController@postSua');
 			Route::get('xem/{id_ks}','KhaosatController@getXem');
+			
+
 	});
 
 	Route::group(['prefix'=>'phieukhaosat'],function(){
@@ -99,9 +102,12 @@ Route::group(['prefix'=>'admin'],function(){
 			Route::get('sua/{id_pks}','PhieukhaosatController@getSua');
 			Route::post('sua/{id_pks}','PhieukhaosatController@postSua');
 			Route::get('xem/{id_pks}','PhieukhaosatController@getXem');
+			Route::get('xoa1/{id_pks}','PhieukhaosatController@getXoa1');
+
 
 	});
 });
+
 
 Route::get('lienket',function(){
 	$data = App\User::find(8)->phongban->toArray();
@@ -112,3 +118,12 @@ Route::get('lienketphongban',function(){
 	$data = App\Phongban::find(3)->user->toArray();
 	var_dump($data);
 });
+
+Route::get('/findProductName','PhieukhaosatController@findProductName');
+Route::get('khaosat','MainController@userNhanVien1');
+Route::get('khaosat','NhanvienController@getkhaosat');
+Route::get('nop','NhanvienController@nop');
+Route::get('sua','NhanvienController@getSua');
+Route::post('postsua/{id}','NhanvienController@postSua');
+
+	

@@ -33,59 +33,106 @@
                 </div>
             <?php endif; ?>
 
-
+            <br><br>
             <form action="them" method="post" class="form-horizontal"> 
                 <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
                 <div class="form-group">
-                    <table class="table table-hover table-striped">
-                        <tr>
-                            <td><label class="control-label">Lĩnh vực: </label></td>
-                            <td>
-                                <select name="id_lv" id="id_lv" class="form-control" id="sel1">
-
-                                    <?php $__currentLoopData = $linhvuc_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($data->id_lv); ?>"><?php echo e($data->tenlv); ?></option>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                   
+                            
+    
+                                
+                                <label class="control-label" style="font-size: 17px" ><b>Lĩnh vực: </b></label>
+                                <select name="id_lv" style="width: 700px"  class=" form-control productcategory" id="id_lv">
                                     
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label class="control-label">Tiêu chí đánh giá: </label></td>
-                            <td>
-                                <select name="id_ch" id= "id_ch" class="form-control" id="sel1">
-
-                                    <?php $__currentLoopData = $tieuchidanhgia_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($data->id_ch); ?>"><?php echo e($data->noidungch); ?></option>
+                                    <option value="0" disabled="true" selected="true">-Lĩnh vực-</option>
+                                    <?php $__currentLoopData = $prod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($cat->id_lv); ?>"><?php echo e($cat->tenlv); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label class="control-label">Đợt khảo sát: </label></td>
-                            <td>
-                                <select name="id_ks" class="form-control" id="sel1">
 
+                                </select>
+                                
+                                <br>
+                              
+                                <label class="control-label" style="font-size: 17px"><b>Tiêu chí đánh giá: </b></label>
+                                
+                                <select name="id_ch" style="width: 700px" class="form-control productname">
+
+                                    <option value="0" disabled="true" selected="true">-Tiêu chí đánh giá-</option>
+                                </select>
+                            <br>
+                                
+                                <label class="control-label" style="font-size: 17px"><b>Đợt khảo sát: </b></label>
+                                &nbsp
+                                <select name="id_ks" style="width: 700px" class="form-control">
+
+                                    <option value="0" disabled="true" selected="true">-Chọn đợt khảo sát-</option>
                                     <?php $__currentLoopData = $khaosat_array; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value="<?php echo e($data->id_ks); ?>"><?php echo e($data->tenks); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    
                                 </select>
-                            </td>
-                        </tr>
+
+
+                            
+
+                                
+                            
                         
-                        <tr style="background-color: white">
-                            <td colspan="2" align="center">
+                        <!-- <tr style="background-color: white">
+                            <td colspan="2" align="center"> -->
+                                <br><br>
+                               <center>
                                 <button type="submit" name="btn_submit" class="btn btn-success" style="width: 8em">Thêm</button>
-                            </td>
-                        </tr>
+                            </center>
+                            <!-- </td>
+                        </tr> -->
                     </table>
                 </div>
             </form>
         </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-           
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $(document).on('change','.productcategory',function(){
+            // console.log("hmm its change");
+
+            var id_lv=$(this).val();
+            // console.log(cat_id);
+            var div=$(this).parent();
+
+            var op=" ";
+
+            $.ajax({
+                type:'get',
+                url:'<?php echo URL::to('findProductName'); ?>',
+                data:{'id_lv':id_lv},
+                success:function(data){
+                    //console.log('success');
+
+                    //console.log(data);
+
+                    //console.log(data.length);
+                    op+='<option value="0" selected disabled>Chọn tiêu chí đánh giá</option>';
+                    for(var i=0;i<data.length;i++){
+                    op+='<option value="'+data[i].id_ch+'">'+data[i].noidungch+'</option>';
+                   }
+
+                   div.find('.productname').html(" ");
+                   div.find('.productname').append(op);
+                },
+                error:function(){
+
+                }
+            });
+        });
+
+        
+
+    });
+</script>
+
+     
      <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/admin/phieukhaosat/them.blade.php ENDPATH**/ ?>

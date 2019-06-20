@@ -19,4 +19,5 @@ public function user()
 	return $this->hasMany('App\User','id_pb','id_pb');
 }
 
+
 }

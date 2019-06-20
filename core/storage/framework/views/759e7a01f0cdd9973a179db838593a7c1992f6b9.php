@@ -55,7 +55,7 @@
                         </tr>
                          </table>
                        
-                       
+                        
                          <table class="table table-hover table-striped">
                             <THEAD>
                                 <tr align="center">
@@ -65,36 +65,49 @@
                                     <th>BÌNH THƯỜNG</th>
                                     <th>HÀI LÒNG</th>
                                     <th>RẤT HÀI LÒNG</th>
+                                    <th></th>
 
                                 </tr>
                             </THEAD>
                             
-                                <?php $__currentLoopData = $tieuchidanhgia; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($khaosat->id_ks == $tc->id_ks): ?>
-                             <tr align="left">                              
-                            <td><?php echo e($tc->noidungch); ?></td>       
-                            <td><input type="radio" name="tl" value="1"></td>
-                            <td><input type="radio" name="tl" value="2"></td>
-                            <td><input type="radio" name="tl" value="3"></td>
-                            <td><input type="radio" name="tl" value="4"></td>
-                            <td><input type="radio" name="tl" value="5"></td>
-                            </tr>
-                            <?php endif; ?>
+                                <?php $__currentLoopData = $phieukhaosat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $tieuchidanhgia; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($khaosat->id_ks == $tc->id_ks && $tc->id_ch == $c->id_ch): ?>
+
+                               
+                               
+                                     <tr align="center">                              
+                                    <td><?php echo e($c->noidungch); ?></td>  
+                                       
+                                    <td><input type="radio" name="<?php echo e($tc->id_pks); ?>" value="1"></td>
+                                    <td><input type="radio" name="<?php echo e($tc->id_pks); ?>" value="2"></td>
+                                    <td><input type="radio" name="<?php echo e($tc->id_pks); ?>" value="3"></td>
+                                    <td><input type="radio" name="<?php echo e($tc->id_pks); ?>" value="4"></td>
+                                    <td><input type="radio" name="<?php echo e($tc->id_pks); ?>" value="5"></td>
+                                    <td><i><a href="/admin/phieukhaosat/xoa1/<?php echo e($tc->id_pks); ?>"><i style="color: red" class="fas fa-times"></i></a></i></td>
+                                   
+                                    </tr>
+                                    <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             
                     </table>
-                        
+                        <center><?php echo $phieukhaosat->links(); ?></center>
                         <tr style="background-color: white">
                             <td colspan="2" align="center">
-                                <a href="/admin/khaosat/danhsach" name="btn_submit" class="btn btn-success" style="width: 8em">Back</a>
+                                <center>
+                                <a href="/admin/khaosat/danhsach" name="btn_submit"  class="btn btn-info"  style="width: 10em">Back</a>
+                                <a href="/admin/phieukhaosat/them" name="btn_submit" class="btn btn-success" style="width: 10em">Thêm tiêu chí</a>
+                                </center>
                             </td>
                         </tr>
                    
                 </div>
             </form>
         </div>
+
 </div>
 
-           
-     <?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+<?php echo $__env->make('layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php /**PATH D:\TTTT\VNPT-Internship-2.git\trunk\core\resources\views/admin/khaosat/xem.blade.php ENDPATH**/ ?>
